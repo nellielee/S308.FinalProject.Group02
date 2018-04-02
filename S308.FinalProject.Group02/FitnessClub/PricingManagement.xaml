@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="PricingManagement" Height="300" Width="300">
+        Title="PricingManagement" Height="365.882" Width="621.176">
     <Grid>
-        
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="33,60,0,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="174,60,-8,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="btnMemberInformation" Content="Pricing Management" HorizontalAlignment="Left" Margin="316,60,-150,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="458,60,-292,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click"/>
+        <Label x:Name="lblPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Height="31" Margin="33,93,0,0" VerticalAlignment="Top" Width="177" FontSize="16" FontWeight="Bold"/>
+        <Label x:Name="lblMIInstructions" Content="Please select an existing membership type to view/change the price, &#xA;and view/change the membership offering terms." HorizontalAlignment="Left" Margin="33,129,-112,0" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" Width="371"/>
+        <Label x:Name="lblType" Content="Membership Type" HorizontalAlignment="Left" Margin="33,188,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblNewPrice" Content="New Price" HorizontalAlignment="Left" Margin="388,192,-159,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblOffered" Content="Currently Offered?" HorizontalAlignment="Left" Margin="344,226,-159,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="174,192,-2,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="473,192,-301,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cboOffered" HorizontalAlignment="Left" Margin="473,230,-301,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnSubmitChanges" Content="Submit Changes" HorizontalAlignment="Left" Margin="495,267,-301,-18" VerticalAlignment="Top" Width="98"/>
+        <TextBox x:Name="txtPriceAndOffering" HorizontalAlignment="Left" Height="61" Margin="61,257,-2,-49" TextWrapping="Wrap" VerticalAlignment="Top" Width="233"/>
+        <Button x:Name="btnSelect" Content="Select" HorizontalAlignment="Left" Margin="196,226,-2,0" VerticalAlignment="Top" Width="98"/>
+
     </Grid>
 </Window>

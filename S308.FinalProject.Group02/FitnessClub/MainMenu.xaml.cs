@@ -31,5 +31,7 @@ namespace FitnessClub
             this.Close();
 
         }
+        //imgCard.Source = new BitmapImage(new Uri(@"/Images/gym-2.jpg.jpeg", UriKind.Relative );
+        //imgCard.Visibility = Visibility.Visible;
     }
 }

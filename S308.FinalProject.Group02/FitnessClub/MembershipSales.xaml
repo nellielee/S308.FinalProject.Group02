@@ -19,10 +19,10 @@
         <Label x:Name="lblPtp" Content="Personal Training Plan" HorizontalAlignment="Left" Margin="67,254,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblLocker" Content="Locker Rental" HorizontalAlignment="Left" Margin="67,280,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPricingQuote" Content="Pricing Quote Preview:" HorizontalAlignment="Left" Margin="375,161,0,0" VerticalAlignment="Top" FontSize="13.333"/>
-        <TextBox x:Name="txtStartDate" HorizontalAlignment="Left" Height="23" Margin="213,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="213,179,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cboPtp" HorizontalAlignment="Left" Margin="213,254,0,0" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cboLocker" HorizontalAlignment="Left" Margin="213,284,0,0" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtStartDate" HorizontalAlignment="Left" Height="23" Margin="213,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="1"/>
+        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="213,179,0,0" VerticalAlignment="Top" Width="120" TabIndex="0"/>
+        <ComboBox x:Name="cboPtp" HorizontalAlignment="Left" Margin="213,254,0,0" VerticalAlignment="Top" Width="120" TabIndex="2"/>
+        <ComboBox x:Name="cboLocker" HorizontalAlignment="Left" Margin="213,284,0,0" VerticalAlignment="Top" Width="120" TabIndex="3"/>
         <Label x:Name="lblPQtype" Content="Type" HorizontalAlignment="Left" Margin="397,192,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPqEndDate" Content="End Date" HorizontalAlignment="Left" Margin="397,246,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPqStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="397,220,0,0" VerticalAlignment="Top"/>
@@ -38,8 +38,8 @@
         <Label x:Name="lblPqSubtotal1" Content="" HorizontalAlignment="Left" Margin="515,298,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,2.077"/>
         <Label x:Name="lblAdditionalFeatures2" Content="" HorizontalAlignment="Left" Margin="515,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,2.077"/>
         <Label x:Name="lblPqTotal2" Content="" HorizontalAlignment="Left" Margin="515,350,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,2.077"/>
-        <Button x:Name="btnSubmitQuote" Content="Submit Quote" HorizontalAlignment="Left" Margin="241,324,0,0" VerticalAlignment="Top" Width="92" Click="btnSubmitQuote_Click"/>
-        <Button x:Name="btnProceed" Content="Proceed with Membership Sign Up" HorizontalAlignment="Left" Margin="375,397,0,0" VerticalAlignment="Top" Width="223"/>
+        <Button x:Name="btnSubmitQuote" Content="Submit Quote" HorizontalAlignment="Left" Margin="241,324,0,0" VerticalAlignment="Top" Width="92" Click="btnSubmitQuote_Click" TabIndex="4"/>
+        <Button x:Name="btnProceed" Content="Proceed with Membership Sign Up" HorizontalAlignment="Left" Margin="375,397,0,0" VerticalAlignment="Top" Width="223" TabIndex="5"/>
 
     </Grid>
 </Window>
