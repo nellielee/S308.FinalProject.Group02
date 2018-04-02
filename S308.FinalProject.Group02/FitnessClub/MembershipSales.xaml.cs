@@ -23,5 +23,16 @@ namespace FitnessClub
         {
             InitializeComponent();
         }
+
+        private void btnSubmitQuote_Click(object sender, RoutedEventArgs e)
+        {
+           btnProceed.IsHitTestVisible = true;
+        }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

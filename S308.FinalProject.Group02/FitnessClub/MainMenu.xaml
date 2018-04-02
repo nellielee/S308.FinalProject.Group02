@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MainMenu" Height="300" Width="300">
+        Title="MainMenu" Height="334.117" Width="609.412">
     <Grid>
-        
+        <Label x:Name="lblWelcome" Content="Welcome to Fitness Club!&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="33,118,0,0" VerticalAlignment="Top" Height="31" Width="254" FontWeight="Bold" FontSize="16"/>
+        <Label x:Name="lblSlogan" Content="Become your best self...&#xD;&#xA;Your journey begins here. &#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="51,149,0,0" VerticalAlignment="Top" Height="47" Width="236" FontSize="14.667"/>
+        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="33,60,0,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="174,60,0,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="btnPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="316,60,0,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="458,60,-31,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click"/>
+
     </Grid>
 </Window>
