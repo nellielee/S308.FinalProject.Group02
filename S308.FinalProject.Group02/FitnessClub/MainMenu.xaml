@@ -13,6 +13,8 @@
         <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="174,60,0,0" VerticalAlignment="Top" Width="126"/>
         <Button x:Name="btnPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="316,60,0,0" VerticalAlignment="Top" Width="126"/>
         <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="458,60,-31,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click"/>
+        <Image x:Name="logo_png" Margin="174,0,183,247" Source="logo.png" Stretch="Fill"/>
+        <Image x:Name="gym_2_jpg_jpeg" Margin="255,100,29,21" Source="gym-2.jpg.jpeg" Stretch="Fill"/>
 
     </Grid>
 </Window>
