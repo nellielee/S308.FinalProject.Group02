@@ -22,6 +22,7 @@
         <Button x:Name="btnSubmitChanges" Content="Submit Changes" HorizontalAlignment="Left" Margin="495,267,-301,-18" VerticalAlignment="Top" Width="98"/>
         <TextBox x:Name="txtPriceAndOffering" HorizontalAlignment="Left" Height="61" Margin="61,257,-2,-49" TextWrapping="Wrap" VerticalAlignment="Top" Width="233"/>
         <Button x:Name="btnSelect" Content="Select" HorizontalAlignment="Left" Margin="196,226,-2,0" VerticalAlignment="Top" Width="98"/>
+        <Image x:Name="logo_png" Margin="174,0,195,279" Source="logo.png" Stretch="Fill"/>
 
     </Grid>
 </Window>

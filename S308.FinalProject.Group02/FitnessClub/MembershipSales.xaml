@@ -40,6 +40,7 @@
         <Label x:Name="lblPqTotal2" Content="" HorizontalAlignment="Left" Margin="515,350,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,2.077"/>
         <Button x:Name="btnSubmitQuote" Content="Submit Quote" HorizontalAlignment="Left" Margin="241,324,0,0" VerticalAlignment="Top" Width="92" Click="btnSubmitQuote_Click" TabIndex="4"/>
         <Button x:Name="btnProceed" Content="Proceed with Membership Sign Up" HorizontalAlignment="Left" Margin="375,397,0,0" VerticalAlignment="Top" Width="223" TabIndex="5"/>
+        <Image x:Name="logo_png" Margin="174,0,222,378" Source="logo.png" Stretch="Fill"/>
 
     </Grid>
 </Window>

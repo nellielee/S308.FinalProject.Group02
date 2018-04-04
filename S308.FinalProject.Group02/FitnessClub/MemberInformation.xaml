@@ -22,6 +22,7 @@
         <Label x:Name="lblPhone" Content="Phone Number" HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblResults" Content="Results:" HorizontalAlignment="Left" Margin="345,161,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtResults" HorizontalAlignment="Left" Height="258" Margin="345,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" FontFamily="Courier New" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto"/>
+        <Image x:Name="logo_png" Margin="174,0,213,406" Source="logo.png" Stretch="Fill"/>
 
     </Grid>
 </Window>
