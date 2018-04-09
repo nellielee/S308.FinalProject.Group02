@@ -10,7 +10,6 @@
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="33,60,0,0" VerticalAlignment="Top" Width="126"/>
         <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="174,60,0,0" VerticalAlignment="Top" Width="126"/>
         <Button x:Name="btnPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="316,60,-10,0" VerticalAlignment="Top" Width="126"/>
-        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="458,60,-152,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click"/>
         <Label x:Name="lblMemberInformation" Content="Member Information" HorizontalAlignment="Left" Height="31" Margin="33,93,0,0" VerticalAlignment="Top" Width="177" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="lblMIInstructions" Content="Enter in a member's last name, email, and/or phone &#xD;&#xA;number to look up member information. " HorizontalAlignment="Left" Margin="33,129,0,0" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" Width="334"/>
         <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="33,188,0,0" VerticalAlignment="Top"/>
@@ -22,6 +21,9 @@
         <Label x:Name="lblPhone" Content="Phone Number" HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblResults" Content="Results:" HorizontalAlignment="Left" Margin="345,161,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtResults" HorizontalAlignment="Left" Height="258" Margin="345,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" FontFamily="Courier New" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto"/>
+        <Image x:Name="imgLogo" Margin="174,0,213,406" Source="logo.png" Stretch="Fill"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="458,60,0,0" VerticalAlignment="Top" Width="126"/>
+        <Button x:Name="btnCreateMember" Content="Create Member" HorizontalAlignment="Left" Margin="231,423,0,0" VerticalAlignment="Top" Width="98" TabIndex="3"/>
 
     </Grid>
 </Window>
