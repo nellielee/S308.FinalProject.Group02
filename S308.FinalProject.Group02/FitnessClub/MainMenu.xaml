@@ -11,8 +11,8 @@
             <ColumnDefinition Width="0*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="lblWelcome" Content="Welcome to Fitness Club!&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="33,118,0,0" VerticalAlignment="Top" Height="31" Width="254" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblSlogan" Content="Become your best self...&#xD;&#xA;Your journey begins here. &#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="51,149,0,0" VerticalAlignment="Top" Height="47" Width="236" FontSize="14.667" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblWelcome" Content="Welcome to Fitness Club!&#xD;&#xA;&#xD;&#xA;" HorizontalAlignment="Left" Margin="33,130,0,0" VerticalAlignment="Top" Height="31" Width="254" FontWeight="Bold" FontSize="16" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblSlogan" Content="Become your best self...&#xD;&#xA;Your journey begins here. &#xD;&#xA;&#xA;" HorizontalAlignment="Left" Margin="51,161,0,0" VerticalAlignment="Top" Height="52" Width="199" FontSize="14.667" Grid.ColumnSpan="2"/>
         <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="33,60,0,0" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="2"/>
         <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="174,60,0,0" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="2"/>
         <Button x:Name="btnPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="316,60,0,0" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="2"/>
