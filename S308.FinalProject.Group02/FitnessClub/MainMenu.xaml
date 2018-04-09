@@ -18,7 +18,7 @@
         <Button x:Name="btnPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="316,60,0,0" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="2"/>
         <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="458,60,0,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click" Grid.ColumnSpan="2"/>
         <Image x:Name="imgLogo" Margin="174,0,183,247" Source="logo.png" Stretch="Fill" Grid.ColumnSpan="2"/>
-        <Image x:Name="imgTreadmill" Margin="255,100,29,21" Source="gym-2.jpg.jpeg" Stretch="Fill" Grid.ColumnSpan="2"/>
+        <Image x:Name="imgTreadmill" Margin="255,101,29,20" Source="gym-2.jpg.jpeg" Stretch="Fill" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>
