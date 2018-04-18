@@ -55,5 +55,12 @@ namespace FitnessClub
             pricingmgmtWindow.Show();
             this.Close();
         }
+
+        private void btnProceed_Click(object sender, RoutedEventArgs e)
+        {
+            Membership_Signup membersignupWindow = new Membership_Signup();
+            membersignupWindow.Show();
+            this.Close();
+        }
     }
 }
