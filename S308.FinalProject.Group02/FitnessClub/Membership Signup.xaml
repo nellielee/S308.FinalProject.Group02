@@ -32,7 +32,6 @@
         <Button x:Name="btnCreateMember" Content="Create Member" HorizontalAlignment="Left" Margin="304,416,0,0" VerticalAlignment="Top" Width="100" Click="btnCreateMember_Click"/>
         <Button x:Name="btnReturn" Content="Main Menu" HorizontalAlignment="Left" Margin="379,58,0,0" VerticalAlignment="Top" Width="75" Click="btnReturn_Click"/>
         <Image x:Name="imgLogo" Margin="128,0,122,386" Source="logo.png" Stretch="Fill"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="379,86,0,0" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>
