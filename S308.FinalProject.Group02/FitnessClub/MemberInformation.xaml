@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MemberInformation" Height="493" Width="639">
+        Title="MemberInformation" Height="493" Width="639" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="33,60,0,0" VerticalAlignment="Top" Width="126" Click="btnMainMenu_Click"/>
         <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="174,60,0,0" VerticalAlignment="Top" Width="126" Click="btnMembershipSales_Click"/>
