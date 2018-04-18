@@ -32,6 +32,27 @@ namespace FitnessClub
             this.Close();
 
         }
+
+        private void btnMemberInformation_Click(object sender, RoutedEventArgs e)
+        {
+            MemberInformation memberinfoWindow = new MemberInformation();
+            memberinfoWindow.Show();
+            this.Close();
+        }
+
+        private void btnMembershipSales_Click(object sender, RoutedEventArgs e)
+        {
+            MembershipSales membersaleWindow = new MembershipSales();
+            membersaleWindow.Show();
+            this.Close();
+        }
+
+        private void btnPricingManagement_Click(object sender, RoutedEventArgs e)
+        {
+            PricingManagement pricingmgmtWindow = new PricingManagement();
+            pricingmgmtWindow.Show();
+            this.Close();
+        }
         //imgCard.Source = new BitmapImage(new Uri(@"/Images/gym-2.jpg.jpeg", UriKind.Relative );
         //imgCard.Visibility = Visibility.Visible;
     }
