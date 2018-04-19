@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="MembershipSales" Height="465" Width="648">
+        Title="MembershipSales" Height="465" Width="648" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="33,60,0,0" VerticalAlignment="Top" Width="126" Click="btnMainMenu_Click"/>
         <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="174,60,-8,0" VerticalAlignment="Top" Width="126" Click="btnMemberInformation_Click"/>
@@ -13,16 +13,29 @@
         <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="458,60,-292,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click"/>
         <Label x:Name="lblMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Height="31" Margin="33,93,0,0" VerticalAlignment="Top" Width="177" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="lblInstructions" Content="Please enter in the following items to return a pricing quote. " HorizontalAlignment="Left" Margin="33,129,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblType" Content="Type" HorizontalAlignment="Left" Margin="67,171,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="67,202,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblAdditionalFeatures" Content="Additional features (optional):" HorizontalAlignment="Left" Margin="67,228,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
-        <Label x:Name="lblPtp" Content="Personal Training Plan" HorizontalAlignment="Left" Margin="67,254,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblLocker" Content="Locker Rental" HorizontalAlignment="Left" Margin="67,280,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblType" Content="Type" HorizontalAlignment="Left" Margin="33,171,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="33,202,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblAdditionalFeatures" Content="Additional features (optional):" HorizontalAlignment="Left" Margin="33,228,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
+        <Label x:Name="lblPtp" Content="Personal Training Plan" HorizontalAlignment="Left" Margin="33,254,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblLocker" Content="Locker Rental" HorizontalAlignment="Left" Margin="33,280,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPricingQuote" Content="Pricing Quote Preview:" HorizontalAlignment="Left" Margin="375,161,0,0" VerticalAlignment="Top" FontSize="13.333"/>
-        <TextBox x:Name="txtStartDate" HorizontalAlignment="Left" Height="23" Margin="213,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="1"/>
-        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="213,179,0,0" VerticalAlignment="Top" Width="120" TabIndex="0"/>
-        <ComboBox x:Name="cboPtp" HorizontalAlignment="Left" Margin="213,254,0,0" VerticalAlignment="Top" Width="120" TabIndex="2"/>
-        <ComboBox x:Name="cboLocker" HorizontalAlignment="Left" Margin="213,284,0,0" VerticalAlignment="Top" Width="120" TabIndex="3"/>
+        <TextBox x:Name="txtStartDate" HorizontalAlignment="Left" Height="23" Margin="192,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" TabIndex="1"/>
+        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="192,179,0,0" VerticalAlignment="Top" Width="172" TabIndex="0" SelectedIndex="0">
+            <Button Content="Individual 1 Month: $9.99"/>
+            <Button Content="Individual 12 Month: $100.00"/>
+            <Button Content="Two Person 1 Month: $14.99"/>
+            <Button Content="Two Person 12 Month: $150.00"/>
+            <Button Content="Family 1 Month: $19.99"/>
+            <Button Content="Family 12 Month: $200.00"/>
+        </ComboBox>
+        <ComboBox x:Name="cboPtp" HorizontalAlignment="Left" Margin="192,254,0,0" VerticalAlignment="Top" Width="172" TabIndex="2" SelectedIndex="0">
+            <Button Content="Do Not Include"/>
+            <Button Content="Include: $5.00 per month"/>
+        </ComboBox>
+        <ComboBox x:Name="cboLocker" HorizontalAlignment="Left" Margin="192,284,0,0" VerticalAlignment="Top" Width="172" TabIndex="3" SelectedIndex="0">
+            <Button Content="Do Not Include"/>
+            <Button Content="Include: $1.00 per month"/>
+        </ComboBox>
         <Label x:Name="lblPQtype" Content="Type" HorizontalAlignment="Left" Margin="397,192,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPqEndDate" Content="End Date" HorizontalAlignment="Left" Margin="397,246,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPqStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="397,220,0,0" VerticalAlignment="Top"/>
