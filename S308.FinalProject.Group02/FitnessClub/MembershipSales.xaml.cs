@@ -26,7 +26,27 @@ namespace FitnessClub
 
         private void btnSubmitQuote_Click(object sender, RoutedEventArgs e)
         {
+            //define variables to hold information from user input
+            string strType, strPersonalTraining, srtLockerRental;
+            //type combo
+
+         
+
+
+            //Personal Training Combo
+
+
+
+            //Locker Rental Combo
+
+
+
+
+            //take in user input, validate, store in variable
+
+            //output into textboxes - rectangle is just a boarder
            
+
         }
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
@@ -34,6 +54,15 @@ namespace FitnessClub
             this.Close();
 
         }
+
+
+
+
+
+
+
+        //navegation bar 
+
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
