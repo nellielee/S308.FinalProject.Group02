@@ -22,6 +22,13 @@ namespace FitnessClub
         public PricingManagement()
         {
             InitializeComponent();
+
+            //define variables
+            int intPrice;
+
+            //validate
+            intPrice = txtPrice.Text.Trim();
+
         }
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)

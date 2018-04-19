@@ -15,14 +15,26 @@
         <Label x:Name="lblType" Content="Membership Type" HorizontalAlignment="Left" Margin="33,188,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblNewPrice" Content="New Price" HorizontalAlignment="Left" Margin="388,192,-159,0" VerticalAlignment="Top"/>
         <Label x:Name="lblOffered" Content="Currently Offered?" HorizontalAlignment="Left" Margin="344,226,-159,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="174,192,-2,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="174,192,-2,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="N/A"/>
+            <ComboBoxItem Content="Individual 1 Month"/>
+            <ComboBoxItem Content="Individual 12 Month"/>
+            <ComboBoxItem Content="Two Person 1 Month"/>
+            <ComboBoxItem Content="Two Person 12 Month"/>
+            <ComboBoxItem Content="Family 1 Month"/>
+            <ComboBoxItem Content="Family 12 Month"/>
+        </ComboBox>
         <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="473,192,-301,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="cboOffered" HorizontalAlignment="Left" Margin="473,230,-301,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="cboOffered" HorizontalAlignment="Left" Margin="473,230,-301,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="N/A"/>
+            <ComboBoxItem Content="Yes"/>
+            <ComboBoxItem Content="No"/>
+        </ComboBox>
         <Button x:Name="btnSubmitChanges" Content="Submit Changes" HorizontalAlignment="Left" Margin="495,267,-301,-18" VerticalAlignment="Top" Width="98"/>
-        <TextBox x:Name="txtPriceAndOffering" HorizontalAlignment="Left" Height="61" Margin="61,257,-2,-49" TextWrapping="Wrap" VerticalAlignment="Top" Width="233"/>
         <Button x:Name="btnSelect" Content="Select" HorizontalAlignment="Left" Margin="196,226,-2,0" VerticalAlignment="Top" Width="98"/>
         <Image x:Name="imgLogo" Margin="174,0,195,279" Source="logo.png" Stretch="Fill"/>
         <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="467,60,0,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click"/>
+        <DataGrid x:Name="dtgResults" HorizontalAlignment="Left" Height="58" Margin="50,267,0,0" VerticalAlignment="Top" Width="244"/>
 
     </Grid>
 </Window>
