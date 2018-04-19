@@ -26,8 +26,8 @@ namespace FitnessClub
             //define variables
             int intPrice;
 
-            //validate
-            intPrice = txtPrice.Text.Trim();
+            //validate - you need a try parse not a to string
+            //intPrice = txtPrice.Text.Trim();
 
         }
 
