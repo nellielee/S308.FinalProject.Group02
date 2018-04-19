@@ -49,5 +49,21 @@ namespace FitnessClub
         {
             this.Close();
         }
+
+        private void btnSubmit_Click(object sender, RoutedEventArgs e)
+        {
+            //define variables
+            string strLast, strEmail, strPhone;
+            strLast = txtLastName.Text;
+            strEmail = txtEmail.Text;
+            strPhone = txtPhone.Text;
+
+            //All three inputs are blank
+            if(string.IsNullOrEmpty(strLast) && string.IsNullOrEmpty(strEmail) && string.IsNullOrEmpty(strPhone))
+            {
+                MessageBox.Show("Must have something entered in at least one of the fields of Last Name, Email, or Phone Number in order to search. Please enter something into at least one of the fields.");
+            }
+            
+        }
     }
 }
