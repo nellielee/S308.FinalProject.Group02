@@ -61,7 +61,7 @@ namespace FitnessClub
 
 
 
-        //navegation bar 
+        //navigation bar 
 
 
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
