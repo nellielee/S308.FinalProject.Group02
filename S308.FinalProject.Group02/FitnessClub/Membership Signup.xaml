@@ -26,9 +26,24 @@
         <TextBox x:Name="txtPhone_Copy4" HorizontalAlignment="Left" Height="21" Margin="151,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="2"/>
         <Label x:Name="lblWeight" Content="Weight" HorizontalAlignment="Left" Margin="40,359,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblFitnessGoal" Content="Fitness Goal" HorizontalAlignment="Left" Margin="40,390,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboCardType" HorizontalAlignment="Left" Margin="151,244,0,0" VerticalAlignment="Top" Width="132"/>
-        <ComboBox x:Name="cboGender" HorizontalAlignment="Left" Margin="151,306,0,0" VerticalAlignment="Top" Width="132"/>
-        <ComboBox x:Name="cboFitnessGoal" HorizontalAlignment="Left" Margin="151,394,0,0" VerticalAlignment="Top" Width="132"/>
+        <ComboBox x:Name="cboCardType" HorizontalAlignment="Left" Margin="151,244,0,0" VerticalAlignment="Top" Width="132" SelectedIndex="0">
+            <ComboBoxItem Content="AMEX"/>
+            <ComboBoxItem Content="Discover"/>
+            <ComboBoxItem Content="MasterCard"/>
+            <ComboBoxItem Content="VISA"/>
+        </ComboBox>
+        <ComboBox x:Name="cboGender" HorizontalAlignment="Left" Margin="151,306,0,0" VerticalAlignment="Top" Width="132" SelectedIndex="0">
+            <ComboBoxItem Content="Male"/>
+            <ComboBoxItem Content="Female"/>
+            <ComboBoxItem Content="Other"/>
+        </ComboBox>
+        <ComboBox x:Name="cboFitnessGoal" HorizontalAlignment="Left" Margin="151,394,0,0" VerticalAlignment="Top" Width="132" SelectedIndex="0">
+            <ComboBoxItem Content="No Fitness Goal"/>
+            <ComboBoxItem Content="Athletic Performance"/>
+            <ComboBoxItem Content="Overall Health"/>
+            <ComboBoxItem Content="Strength Training Weight Loss"/>
+            <ComboBoxItem Content="Weight Management"/>
+        </ComboBox>
         <Button x:Name="btnCreateMember" Content="Create Member" HorizontalAlignment="Left" Margin="304,416,0,0" VerticalAlignment="Top" Width="100" Click="btnCreateMember_Click"/>
         <Button x:Name="btnReturn" Content="Main Menu" HorizontalAlignment="Left" Margin="379,58,0,0" VerticalAlignment="Top" Width="75" Click="btnReturn_Click"/>
         <Image x:Name="imgLogo" Margin="128,0,122,386" Source="logo.png" Stretch="Fill"/>

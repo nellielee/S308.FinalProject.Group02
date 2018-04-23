@@ -21,20 +21,20 @@
         <Label x:Name="lblPricingQuote" Content="Pricing Quote Preview:" HorizontalAlignment="Left" Margin="375,161,0,0" VerticalAlignment="Top" FontSize="13.333"/>
         <TextBox x:Name="txtStartDate" HorizontalAlignment="Left" Height="23" Margin="192,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" TabIndex="1"/>
         <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="192,179,0,0" VerticalAlignment="Top" Width="172" TabIndex="0" SelectedIndex="0">
-            <Button Content="Individual 1 Month: $9.99"/>
-            <Button Content="Individual 12 Month: $100.00"/>
-            <Button Content="Two Person 1 Month: $14.99"/>
-            <Button Content="Two Person 12 Month: $150.00"/>
-            <Button Content="Family 1 Month: $19.99"/>
-            <Button Content="Family 12 Month: $200.00"/>
+            <ComboBoxItem Content="Individual 1 Month: $9.99"/>
+            <ComboBoxItem Content="Individual 12 Month: $100.00"/>
+            <ComboBoxItem Content="Two Person 1 Month: $14.99"/>
+            <ComboBoxItem Content="Two Person 12 Month: $150.00"/>
+            <ComboBoxItem Content="Family 1 Month: $19.99"/>
+            <ComboBoxItem Content="Family 12 Month: $200.00"/>
         </ComboBox>
         <ComboBox x:Name="cboPtp" HorizontalAlignment="Left" Margin="192,254,0,0" VerticalAlignment="Top" Width="172" TabIndex="2" SelectedIndex="0">
-            <Button Content="Do Not Include"/>
-            <Button Content="Include: $5.00 per month"/>
+            <ComboBoxItem Content="Do Not Include"/>
+            <ComboBoxItem Content="Include: $5.00 per month"/>
         </ComboBox>
         <ComboBox x:Name="cboLocker" HorizontalAlignment="Left" Margin="192,284,0,0" VerticalAlignment="Top" Width="172" TabIndex="3" SelectedIndex="0">
-            <Button Content="Do Not Include"/>
-            <Button Content="Include: $1.00 per month"/>
+            <ComboBoxItem Content="Do Not Include"/>
+            <ComboBoxItem Content="Include: $1.00 per month"/>
         </ComboBox>
         <Label x:Name="lblPQtype" Content="Type" HorizontalAlignment="Left" Margin="397,192,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPqEndDate" Content="End Date" HorizontalAlignment="Left" Margin="397,246,0,0" VerticalAlignment="Top"/>
