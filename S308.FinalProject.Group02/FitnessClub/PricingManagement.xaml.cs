@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using PricingData;
 using System.IO;
 using Newtonsoft.Json;
-
+//how do i append to a list, should i make them type in all of the corrections?
 namespace FitnessClub
 {
     /// <summary>
