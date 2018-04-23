@@ -37,9 +37,12 @@ namespace FitnessClub
             //MainMenu mainmenuWindow = new MainMenu();
             //mainmenuWindow.Show();
             //this.Close();
-            
+
             //create variables
-            string strFirstName
+            string strFirstName, strLastName, strCreditCardType, strPhone, strEmail, strGender, strFitnessGoal, strAge, strWeight;
+            int intWeight;
+            byte bytAge;
+            
 
             //validate first name - required 
             if(txtFirstName.Text == "")
@@ -47,6 +50,7 @@ namespace FitnessClub
                 MessageBox.Show("Please enter a First Name.");
                 return;
             }
+            strFirstName=txtFirstName.Text;
 
             //Validate Last Name - required
             if (txtLastName.Text == "")
@@ -54,6 +58,7 @@ namespace FitnessClub
                 MessageBox.Show("Please enter a Last Name.");
                 return;
             }
+            strLastName = txtLastName.Text;
 
             //Validate Email - criteria - required FINISH 
             if (txtEmail.Text == "")
@@ -67,11 +72,17 @@ namespace FitnessClub
                 MessageBox.Show("Please enter a valid email.");
                 return;
             }
-
+            strEmail = txtEmail.Text;
 
             //Phone Number - required -- ADD
 
+
+
             //validate Credit Card Type - required - cbo
+
+            ComboBoxItem cbiSelectedItem = (ComboBoxItem)cboCardType.SelectedItem;
+             strCreditCardType = cbiSelectedItem.Content.ToString();
+            
 
 
             //validate Credit Card Number - required
@@ -146,19 +157,36 @@ namespace FitnessClub
             //6. Show the appropriate result          
 
 
-           //valdate gender - required - cbo
+            //valdate gender - required - cbo
+
+            ComboBoxItem cbiSelectedGender = (ComboBoxItem)cboGender.SelectedItem;
+            strGender = cbiSelectedGender.Content.ToString();
 
 
-           //validate age 
-
-
-
-           //validate weight
-
-           //validate fitness goal - cbo
-
-
-
-                }
+            //validate age 
+            if (!Byte.TryParse(txtAge.Text, out bytAge))
+            {
+                MessageBox.Show("Please enter a number for your age");
+                return;
             }
+
+            strAge = bytAge.ToString();
+
+            //validate weight
+            if (!Int32.TryParse(txtAge.Text, out intWeight))
+            {
+                MessageBox.Show("Please enter a number for your weight");
+                return;
+            }
+            strWeight = intWeight.ToString();
+
+            //validate fitness goal - cbo
+            ComboBoxItem cbiSelectedFitnessGoal = (ComboBoxItem)cboFitnessGoal.SelectedItem;
+            strFitnessGoal = cbiSelectedFitnessGoal.Content.ToString();
+
+
+
+
+        }
+    }
 }
