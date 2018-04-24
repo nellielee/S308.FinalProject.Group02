@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
+
 namespace FitnessClub
 {
     /// <summary>
@@ -89,10 +90,12 @@ namespace FitnessClub
             //1. Declare a variables
             string strCardNum = txtCreditCardNumber.Text.Trim().Replace(" ", "");
             long lngOut;        
-            bool bolValid = false;            int i;
+            bool bolValid = false;
+            int i;
             int intCheckDigit;
             int intCheckSum = 0;        
-            string strCardType;
+            string strCardType;
+
             //2. Make sure the text entered is numeric
             if (!Int64.TryParse(strCardNum, out lngOut))
             {
@@ -122,7 +125,8 @@ namespace FitnessClub
             else if (strCardNum.StartsWith("4"))
             {
                 strCardType = "VISA";
-            }            else
+            }
+            else
             {
                 strCardType = "Unknown Card Type";
                 MessageBox.Show("Not a Valid Card Number.");
@@ -132,7 +136,7 @@ namespace FitnessClub
 
             //5. Validate card number
             //ASK THIS SHOULD WORK
-            //strCardNum = ReverseString(strCardNum);
+            strCardNum = ReverseString(strCardNum);
 
             for (i = 0; i < strCardNum.Length; i++)
             {
@@ -147,7 +151,9 @@ namespace FitnessClub
                         intCheckDigit -= 9;
                     }
                 }
-                intCheckSum += intCheckDigit;            }
+                intCheckSum += intCheckDigit;
+            }
+
             if (intCheckSum % 10 == 0)
             {
                 bolValid = true;
@@ -157,9 +163,13 @@ namespace FitnessClub
             //6. Show the appropriate result          
 
 
-            //valdate gender - required - cbo
+          
 
-            ComboBoxItem cbiSelectedGender = (ComboBoxItem)cboGender.SelectedItem;
+
+
+        //valdate gender - required - cbo
+
+        ComboBoxItem cbiSelectedGender = (ComboBoxItem)cboGender.SelectedItem;
             strGender = cbiSelectedGender.Content.ToString();
 
 
@@ -185,8 +195,14 @@ namespace FitnessClub
             strFitnessGoal = cbiSelectedFitnessGoal.Content.ToString();
 
 
+            
 
-
+        }
+        public static string ReverseString(string s)
+        {
+            char[] array = s.ToCharArray();
+            Array.Reverse(array);
+            return new string(array);
         }
     }
 }
