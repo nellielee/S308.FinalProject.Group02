@@ -15,6 +15,9 @@ using PricingData;
 using System.IO;
 using Newtonsoft.Json;
 //how do i append to a list, should i make them type in all of the corrections?
+    //edit new price
+    //edit new availability
+//what is the default availability
 namespace FitnessClub
 {
     /// <summary>
@@ -61,19 +64,19 @@ namespace FitnessClub
                 string strfilepath = @"../../Data/Pricing.json";
 
                 //declare variables
-                string strPrice;
-                int intPrice;
+                string strNewPrice;
+                int intNewPrice;
                 // string strCombo = ((ComboBoxItem)cboMembershipType.SelectedItem).Content.ToString();
                
                 //validation
                
-                if (!Int32.TryParse(txtPrice.Text, out intPrice))
+                if (!Int32.TryParse(txtNewPrice.Text, out intNewPrice))
                 {
                     MessageBox.Show("Please enter a new price without formatting.");
                     return;
                 }
-                strPrice = txtPrice.Text.Trim();
-                if (!strPrice.Contains("."))
+                strNewPrice = txtNewPrice.Text.Trim();
+                if (!strNewPrice.Contains("."))
                 {
                     MessageBox.Show("Please enter a price including the cents. Ex: 99.99");
                     return;
@@ -91,10 +94,16 @@ namespace FitnessClub
                 }
 
                 //instantiate a new type from the input and add it to the list
-                Pricing pricingNew = new Pricing(txtType.Text.Trim(), txtPrice.Text.Trim(), txtAvailability.Text.Trim(),
+                Pricing pricingNew = new Pricing(txtType.Text.Trim(), txtNewPrice.Text.Trim(), txtAvailability.Text.Trim(),
                      cboType.Text, cboOffered.Text);
-
-                pricingList.Add(pricingNew);
+            //edit new price
+            string strPrice = txtPrice.ToString();
+            strNewPrice = txtNewPrice.ToString();
+            int index = pricingList.IndexOf(strPrice);
+            if (index != -1)
+                pricingList[index] = strNewPrice;
+            pricingList.Add(pricingNew);
+            //edit availability
 
                 try
                 {
