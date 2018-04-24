@@ -24,7 +24,7 @@
             <ComboBoxItem Content="Family 1 Month"/>
             <ComboBoxItem Content="Family 12 Month"/>
         </ComboBox>
-        <TextBox x:Name="txtPrice" HorizontalAlignment="Left" Height="23" Margin="473,192,-301,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtNewPrice" HorizontalAlignment="Left" Height="23" Margin="473,192,-301,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="cboOffered" HorizontalAlignment="Left" Margin="473,230,-301,0" VerticalAlignment="Top" Width="120">
             <ComboBoxItem Content="N/A"/>
             <ComboBoxItem Content="Yes"/>
