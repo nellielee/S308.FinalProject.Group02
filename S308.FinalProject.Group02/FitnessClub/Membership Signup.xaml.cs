@@ -30,16 +30,16 @@ namespace FitnessClub
         List<Member> memberList;
 
 
-    
-        public Membership_Signup()
+        public Quote myQuote;
+        public Membership_Signup(Quote q)
         {
             InitializeComponent();
-
+            myQuote = q;
             memberList = new List<Member>();
-            //ImportMemberData();
+            ImportMemberData();
         }
 
-        private void ImportCustomerData()
+        private void ImportMemberData()
         {
             //set up path to file
             string strFilePath = @"..\..\..\..\Members.json";
@@ -250,7 +250,7 @@ namespace FitnessClub
             strPersonalFitnessGoal = cbiSelectedFitnessGoal.Content.ToString();
 
             //instantiate a new Member from the input and add it to the list
-            Member memberNew = new Member(strFirstName, strLastName, strCreditCardType, strCreditCardNumber, strPhone, strEmail, strGender, strAge,strWeight,strPersonalFitnessGoal);
+            Member memberNew = new Member(strFirstName, strLastName, strCreditCardType, strCreditCardNumber, strPhone, strEmail, strGender, strAge,strWeight,strPersonalFitnessGoal, myQuote);
             memberList.Add(memberNew);
 
             //serialize the new list of members to json format

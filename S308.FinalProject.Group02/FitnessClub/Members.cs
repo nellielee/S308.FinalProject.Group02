@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FitnessClub
 {
-    public class Member
+    public class Member : Quote
     {
         //properties
         public string FirstName { get; set; }
@@ -25,7 +25,7 @@ namespace FitnessClub
            {
            }
 
-        public Member(string firstName, string lastName,string creditCardType, string creditCardNumber, string phone, string email, string gender, string age, string weight, string personalFitnessGoal)
+        public Member(string firstName, string lastName,string creditCardType, string creditCardNumber, string phone, string email, string gender, string age, string weight, string personalFitnessGoal, Quote quote)
         {
             FirstName = firstName;
             LastName = lastName;
@@ -37,7 +37,11 @@ namespace FitnessClub
             Age = age;
             Weight = weight;
             PersonalFitnessGoal = personalFitnessGoal;
-           
+            Type = quote.Type;
+            StartDate = quote.StartDate;
+            EndDate = quote.EndDate;
+            PersonalTraining = quote.PersonalTraining;
+            LockerRental = quote.LockerRental;
         }
 
         //overrride
@@ -58,6 +62,12 @@ namespace FitnessClub
             strOutput += "Age: " + Age + Environment.NewLine;
             strOutput += "Weight: " + Weight + Environment.NewLine;
             strOutput += "Personal Fitness Goal: " + PersonalFitnessGoal + Environment.NewLine;
+            strOutput += "Type: " + Type + Environment.NewLine;
+            strOutput += "Start Date: " + StartDate + Environment.NewLine;
+            strOutput += "End Date: " + EndDate + Environment.NewLine;
+            strOutput += "Personal Training: " + PersonalTraining + Environment.NewLine;
+            strOutput += "Locker Rental: " + LockerRental + Environment.NewLine;
+
             return strOutput;
 
         }
