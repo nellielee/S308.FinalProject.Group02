@@ -25,7 +25,8 @@ namespace FitnessClub
     public partial class Membership_Signup : Window
     { 
         //instantiate a list for members
-        List<Member> memberList;
+        List<Member> memberList;
+
 
     
         public Membership_Signup()
@@ -53,7 +54,9 @@ namespace FitnessClub
             {
                 MessageBox.Show("Error in import process: " + ex.Message);
             }
-        }
+        }
+
+
 
 
         //messagebox confirmation
@@ -75,18 +78,18 @@ namespace FitnessClub
             //this.Close();
 
             //create variables
-            string strFirstName, strLastName, strCreditCardType, strPhone, strEmail, strGender, strFitnessGoal, strAge, strWeight;
+            string strFirstName, strLastName, strCreditCardType, strCreditCardNumber, strPhone, strEmail, strGender, strPersonalFitnessGoal, strAge, strWeight;
             int intWeight, intPhone;
             byte bytAge;
-            
+
 
             //validate first name - required 
-            if(txtFirstName.Text == "")
+            if (txtFirstName.Text == "")
             {
                 MessageBox.Show("Please enter a First Name.");
                 return;
             }
-            strFirstName=txtFirstName.Text;
+            strFirstName = txtFirstName.Text;
 
             //Validate Last Name - required
             if (txtLastName.Text == "")
@@ -127,21 +130,18 @@ namespace FitnessClub
 
 
 
-            //validate Credit Card Type - required - cbo
 
-            ComboBoxItem cbiSelectedItem = (ComboBoxItem)cboCardType.SelectedItem;
-             strCreditCardType = cbiSelectedItem.Content.ToString();
-            
+
 
 
             //validate Credit Card Number - required
             //1. Declare a variables
             string strCardNum = txtCreditCardNumber.Text.Trim().Replace(" ", "");
-            long lngOut;        
+            long lngOut;
             bool bolValid = false;
             int i;
             int intCheckDigit;
-            int intCheckSum = 0;        
+            int intCheckSum = 0;
             string strCardType;
 
             //2. Make sure the text entered is numeric
@@ -178,12 +178,12 @@ namespace FitnessClub
             {
                 strCardType = "Unknown Card Type";
                 MessageBox.Show("Not a Valid Card Number.");
-                 return;
+                return;
             }
 
 
             //5. Validate card number
-           
+
             strCardNum = ReverseString(strCardNum);
 
             for (i = 0; i < strCardNum.Length; i++)
@@ -208,16 +208,21 @@ namespace FitnessClub
             }
 
 
-            //6. Show the appropriate result          
+            //6. Show the appropriate result   
+
+            strCreditCardNumber = strCardNum;
+
+            // validate Credit Card Type - required - cbo
+
+            ComboBoxItem cbiSelectedItem = (ComboBoxItem)cboCardType.SelectedItem;
+            strCreditCardType = cbiSelectedItem.Content.ToString();
+
+            //do we even need a credit card type?
 
 
-          
+            //valdate gender - required - cbo
 
-
-
-        //valdate gender - required - cbo
-
-        ComboBoxItem cbiSelectedGender = (ComboBoxItem)cboGender.SelectedItem;
+            ComboBoxItem cbiSelectedGender = (ComboBoxItem)cboGender.SelectedItem;
             strGender = cbiSelectedGender.Content.ToString();
 
 
@@ -240,11 +245,26 @@ namespace FitnessClub
 
             //validate fitness goal - cbo
             ComboBoxItem cbiSelectedFitnessGoal = (ComboBoxItem)cboFitnessGoal.SelectedItem;
-            strFitnessGoal = cbiSelectedFitnessGoal.Content.ToString();
+            strPersonalFitnessGoal = cbiSelectedFitnessGoal.Content.ToString();
 
             //instantiate a new Member from the input and add it to the list
-            Member memberNew = new Member(strFirstName, strLastName, str strEmail, strPhone, strCustomerType);
-            customerList.Add(customerNew);
+            Member memberNew = new Member(strFirstName, strLastName, strCreditCardType, strCreditCardNumber, strPhone, strEmail, strGender, strAge,strWeight,strPersonalFitnessGoal);
+            memberList.Add(memberNew);
+
+            //serialize the new list of members to json format
+            try
+            {
+                string jsonData = JsonConvert.SerializeObject(memberList);
+                // use System.IO.File to write over the file with the json data
+                System.IO.File.WriteAllText(strFilePath, jsonData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in member creating process: " + ex.Message);
+            }
+
+            //output result of new member into result textbox as confirmation
+            
 
 
 

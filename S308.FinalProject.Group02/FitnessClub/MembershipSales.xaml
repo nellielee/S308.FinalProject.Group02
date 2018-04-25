@@ -7,10 +7,10 @@
         mc:Ignorable="d"
         Title="MembershipSales" Height="465" Width="648" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="33,60,0,0" VerticalAlignment="Top" Width="126" Click="btnMainMenu_Click"/>
-        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="174,60,-8,0" VerticalAlignment="Top" Width="126" Click="btnMemberInformation_Click"/>
-        <Button x:Name="btnPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="316,60,-150,0" VerticalAlignment="Top" Width="126" Click="btnPricingManagement_Click"/>
-        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="458,60,-292,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click"/>
+        <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="33,60,0,0" VerticalAlignment="Top" Width="126" Click="btnMainMenu_Click" TabIndex="6"/>
+        <Button x:Name="btnMemberInformation" Content="Member Information" HorizontalAlignment="Left" Margin="174,60,-8,0" VerticalAlignment="Top" Width="126" Click="btnMemberInformation_Click" TabIndex="7"/>
+        <Button x:Name="btnPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="316,60,-150,0" VerticalAlignment="Top" Width="126" Click="btnPricingManagement_Click" TabIndex="8"/>
+        <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="458,60,-292,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click" TabIndex="9"/>
         <Label x:Name="lblMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Height="31" Margin="33,93,0,0" VerticalAlignment="Top" Width="177" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="lblInstructions" Content="Please enter in the following items to return a pricing quote. " HorizontalAlignment="Left" Margin="33,129,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblType" Content="Type" HorizontalAlignment="Left" Margin="33,171,0,0" VerticalAlignment="Top"/>
