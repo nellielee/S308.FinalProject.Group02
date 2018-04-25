@@ -7,23 +7,23 @@
         mc:Ignorable="d"
         Title="MemberInformation" Height="493" Width="639" WindowStartupLocation="CenterScreen">
     <Grid>
+        <Image x:Name="imgLogo" Margin="174,0,213,406" Source="logo.png" Stretch="Fill"/>
+
         <Button x:Name="btnMainMenu" Content="Main Menu" HorizontalAlignment="Left" Margin="33,60,0,0" VerticalAlignment="Top" Width="126" Click="btnMainMenu_Click" TabIndex="5"/>
         <Button x:Name="btnMembershipSales" Content="Membership Sales" HorizontalAlignment="Left" Margin="174,60,0,0" VerticalAlignment="Top" Width="126" Click="btnMembershipSales_Click" TabIndex="6"/>
         <Button x:Name="btnPricingManagement" Content="Pricing Management" HorizontalAlignment="Left" Margin="316,60,-10,0" VerticalAlignment="Top" Width="126" Click="btnPricingManagement_Click" TabIndex="7"/>
         <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="458,60,0,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click" TabIndex="8"/>
         <Label x:Name="lblMemberInformation" Content="Member Information" HorizontalAlignment="Left" Height="31" Margin="33,93,0,0" VerticalAlignment="Top" Width="177" FontSize="16" FontWeight="Bold"/>
-        <Label x:Name="lblMIInstructions" Content="Enter in a member's last name, email, and/or phone &#xD;&#xA;number to look up member information. " HorizontalAlignment="Left" Margin="33,129,0,0" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" Width="334"/>
+        <Label x:Name="lblMIInstructions" Content="Enter in a member's last name, email, and/or phone &#xA;number to look up member information. " HorizontalAlignment="Left" Margin="33,129,0,0" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" Width="334"/>
         <Label x:Name="lblLastName" Content="Last Name" HorizontalAlignment="Left" Margin="33,188,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="21" Margin="144,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="0"/>
         <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Margin="33,212,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="21" Margin="144,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="1"/>
         <Label x:Name="lblPhone" Content="Phone Number" HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="21" Margin="144,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="2"/>
-        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Left" Margin="178,281,0,0" VerticalAlignment="Top" Width="98" TabIndex="3" Click="btnSubmit_Click"/>
+        <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="178,281,0,0" VerticalAlignment="Top" Width="98" TabIndex="3" Click="btnSubmit_Click"/>
         <Label x:Name="lblResults" Content="Results:" HorizontalAlignment="Left" Margin="345,161,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtResults" HorizontalAlignment="Left" Height="258" Margin="345,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" FontFamily="Courier New" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
-        <Image x:Name="imgLogo" Margin="174,0,213,406" Source="logo.png" Stretch="Fill"/>
-        <Button x:Name="btnCreateMember" Content="Create Member" HorizontalAlignment="Left" Margin="231,423,0,0" VerticalAlignment="Top" Width="98" TabIndex="4"/>
 
     </Grid>
 </Window>
