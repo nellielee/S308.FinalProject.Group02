@@ -28,6 +28,8 @@ namespace FitnessClub
     {
         List<Pricing> pricingList;
         List<string> typeList;
+        Pricing selectedPricing;
+
         public PricingManagement()
         {
 
@@ -71,18 +73,14 @@ namespace FitnessClub
                 MessageBox.Show("Please select a membership type.");
                 return;
             }
-            //loop or query thru and find where type = individual 1 month to output the price and availability in boxes
-            Pricing pricingSearch;
 
-            ComboBoxItem cbiType = (ComboBoxItem)cboType.SelectedItem;
-            string strType = cbiType.Content.ToString();
+            string strType = cboType.Text;
             string strNewPrice = txtNewPrice.Text.Trim();
 
-            pricingSearch = pricingList.First(p => p.Type == strType);
-
-
-            txtNewPrice.Text = pricingSearch.Price;
-            cboOffered.SelectedIndex = cboOffered.Items.IndexOf(pricingSearch.Availability);
+            selectedPricing = pricingList.First(p => p.Type == strType);
+            
+            txtNewPrice.Text = selectedPricing.Price;
+            cboOffered.Text = selectedPricing.Availability;
 
         }
 
@@ -92,16 +90,33 @@ namespace FitnessClub
         private void btnSubmitChanges_Click(object sender, RoutedEventArgs e)
         {
 
-            //get value from txt and cbo 
-            //how to update an object form a list in c#
-            // for the pricing that matches do a set
-            //instantiate a new type from the input and add it to the list
+            //declare variables
+            string strNewPrice;
+            double dblNewPrice;
+            //validation
+
+            if (!double.TryParse(txtNewPrice.Text, out dblNewPrice))
+            {
+                MessageBox.Show("Please enter a new price without a dollar sign.");
+                return;
+            }
+            txtNewPrice.Text = dblNewPrice.ToString("C2");
+            strNewPrice = txtNewPrice.Text.Trim();
+            if (!strNewPrice.Contains("."))
+            {
+                MessageBox.Show("Please enter a price including the cents. Ex: 99.99");
+                return;
+            }
 
 
-            //edit new price
-
-
-            //edit availability
+            if (cboOffered.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select an offering type.");
+                return;
+            }
+            selectedPricing.Price = txtNewPrice.Text.Trim();
+            selectedPricing.Availability = cboOffered.Text;
+            string strfilepath = @"../../Data/Pricing.json";
 
             try
             {
@@ -119,31 +134,7 @@ namespace FitnessClub
             }
 
             MessageBox.Show("Membership type added!" + Environment.NewLine + pricingList.ToString());
-
-            //declare variables
-            int intNewPrice;
-            //validation
-
-            if (!Int32.TryParse(txtNewPrice.Text, out intNewPrice))
-            {
-                MessageBox.Show("Please enter a new price without formatting.");
-                return;
-            }
-            strNewPrice = txtNewPrice.Text.Trim();
-            if (!strNewPrice.Contains("."))
-            {
-                MessageBox.Show("Please enter a price including the cents. Ex: 99.99");
-                return;
-            }
-
-
-            if (cboOffered.SelectedIndex == -1)
-            {
-                MessageBox.Show("Please select an offering type.");
-                return;
-            }
-            txtNewPrice.Text = "";
-            cboOffered.SelectedIndex = -1;
+            
         }
 
 
