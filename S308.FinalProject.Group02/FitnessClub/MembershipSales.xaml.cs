@@ -19,7 +19,7 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSales : Window
     {
-       // public Quote MyQuote { get; set; }
+        public Quote MyQuote { get; set; }
         public MembershipSales()
         {
             InitializeComponent();
@@ -121,9 +121,11 @@ namespace FitnessClub
             dblAdditionalFeatures = dblLocker + dblPersonalTraining;
             dblTotal = dblSubtotal + dblAdditionalFeatures;
 
-            
 
-            
+            string strStartDate = "2017-04-04";
+            string strEndDate = "2019-04-04";
+
+            MyQuote = new Quote(strType, strStartDate, strEndDate, strPersonalTraining, strLockerRental);
             //output into textboxes - rectangle is just a boarder --placeholder code
             lblPqType2.Content = "";
             lblPqStartDate2.Content = "";
@@ -177,8 +179,7 @@ namespace FitnessClub
 
         private void btnProceed_Click(object sender, RoutedEventArgs e)
         {
-            Membership_Signup membersignupWindow = new Membership_Signup();
-            //membersignupWindow.MyQuote = "Info I want to send to the next window";
+            Membership_Signup membersignupWindow = new Membership_Signup(MyQuote);
             membersignupWindow.Show();
             this.Close();
         }
