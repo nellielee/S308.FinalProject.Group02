@@ -15,15 +15,7 @@
         <Label x:Name="lblType" Content="Membership Type" HorizontalAlignment="Left" Margin="33,188,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblNewPrice" Content="New Price" HorizontalAlignment="Left" Margin="388,192,-159,0" VerticalAlignment="Top"/>
         <Label x:Name="lblOffered" Content="Currently Offered?" HorizontalAlignment="Left" Margin="344,226,-159,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="174,192,-2,0" VerticalAlignment="Top" Width="120" TabIndex="0">
-            <ComboBoxItem Content="N/A"/>
-            <ComboBoxItem Content="Individual 1 Month"/>
-            <ComboBoxItem Content="Individual 12 Month"/>
-            <ComboBoxItem Content="Two Person 1 Month"/>
-            <ComboBoxItem Content="Two Person 12 Month"/>
-            <ComboBoxItem Content="Family 1 Month"/>
-            <ComboBoxItem Content="Family 12 Month"/>
-        </ComboBox>
+        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="174,192,-2,0" VerticalAlignment="Top" Width="120" TabIndex="0"/>
         <TextBox x:Name="txtNewPrice" HorizontalAlignment="Left" Height="23" Margin="473,192,-301,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="2"/>
         <ComboBox x:Name="cboOffered" HorizontalAlignment="Left" Margin="473,230,-301,0" VerticalAlignment="Top" Width="120" TabIndex="3">
             <ComboBoxItem Content="N/A"/>
