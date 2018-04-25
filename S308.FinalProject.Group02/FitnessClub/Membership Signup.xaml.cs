@@ -34,7 +34,7 @@ namespace FitnessClub
             InitializeComponent();
 
             memberList = new List<Member>();
-            ImportMemberData();
+            //ImportMemberData();
         }
 
         private void ImportCustomerData()

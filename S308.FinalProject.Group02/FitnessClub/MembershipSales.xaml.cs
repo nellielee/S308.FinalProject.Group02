@@ -19,6 +19,7 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSales : Window
     {
+        public string MyInfo { get; set; }
         public MembershipSales()
         {
             InitializeComponent();
@@ -54,11 +55,14 @@ namespace FitnessClub
                     break;
                 case "Individual 12 Month: $100.00":
                 case "Two Person 12 Month: $150.00":
-                case "Family 12 Month: $200.00":                    dblNumberOfMonths = 12;                    break;          
+                case "Family 12 Month: $200.00":
+                    dblNumberOfMonths = 12;
+                    break;          
                 default:
                     MessageBox.Show("Please select a membership type.");
                     break;
-            }
+            }
+
 
             dblNumberOfMonths = 0;
 
@@ -136,8 +140,8 @@ namespace FitnessClub
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-
+            //this.Close();
+            MessageBox.Show(MyInfo);
         }
 
 

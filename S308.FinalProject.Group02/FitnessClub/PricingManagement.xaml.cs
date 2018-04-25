@@ -94,16 +94,16 @@ namespace FitnessClub
                 }
 
                 //instantiate a new type from the input and add it to the list
-                Pricing pricingNew = new Pricing(txtType.Text.Trim(), txtNewPrice.Text.Trim(), txtAvailability.Text.Trim(),
-                     cboType.Text, cboOffered.Text);
-            //edit new price
-            string strPrice = txtPrice.ToString();
-            strNewPrice = txtNewPrice.ToString();
-            int index = pricingList.IndexOf(strPrice);
-            if (index != -1)
-                pricingList[index] = strNewPrice;
-            pricingList.Add(pricingNew);
-            //edit availability
+             //   Pricing pricingNew = new Pricing(txtType.Text.Trim(), txtNewPrice.Text.Trim(), txtAvailability.Text.Trim(),
+            //         cboType.Text, cboOffered.Text);
+            ////edit new price
+            //string strPrice = txtPrice.ToString();
+            //strNewPrice = txtNewPrice.ToString();
+            //int index = pricingList.IndexOf(strPrice);
+            //if (index != -1)
+            //    pricingList[index] = strNewPrice;
+            //pricingList.Add(pricingNew);
+            ////edit availability
 
                 try
                 {
@@ -120,14 +120,14 @@ namespace FitnessClub
                     MessageBox.Show("Error in export process: " + ex.Message);
                 }
 
-                MessageBox.Show("Membership type added!" + Environment.NewLine + pricingNew.ToString());
+              //  MessageBox.Show("Membership type added!" + Environment.NewLine + pricingNew.ToString());
             }
 
        
 
         private void btnSubmitChanges_Click(object sender, RoutedEventArgs e)
         {
-            txtPrice.Text = "";
+          //  txtPrice.Text = "";
             cboOffered.SelectedIndex = -1;
         }
     
