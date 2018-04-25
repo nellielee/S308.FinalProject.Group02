@@ -15,7 +15,7 @@
         <Label x:Name="lblType" Content="Membership Type" HorizontalAlignment="Left" Margin="33,188,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblNewPrice" Content="New Price" HorizontalAlignment="Left" Margin="388,192,-159,0" VerticalAlignment="Top"/>
         <Label x:Name="lblOffered" Content="Currently Offered?" HorizontalAlignment="Left" Margin="344,226,-159,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="174,192,-2,0" VerticalAlignment="Top" Width="120" TabIndex="0"/>
+        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="174,192,0,0" VerticalAlignment="Top" Width="147" TabIndex="0"/>
         <TextBox x:Name="txtNewPrice" HorizontalAlignment="Left" Height="23" Margin="473,192,-301,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TabIndex="2"/>
         <ComboBox x:Name="cboOffered" HorizontalAlignment="Left" Margin="473,230,-301,0" VerticalAlignment="Top" Width="120" TabIndex="3">
             <ComboBoxItem Content="N/A"/>
@@ -23,7 +23,7 @@
             <ComboBoxItem Content="No"/>
         </ComboBox>
         <Button x:Name="btnSubmitChanges" Content="Submit Changes" HorizontalAlignment="Left" Margin="495,267,-301,-18" VerticalAlignment="Top" Width="98" Click="btnSubmitChanges_Click" TabIndex="4"/>
-        <Button x:Name="btnSelect" Content="Select" HorizontalAlignment="Left" Margin="196,226,-2,0" VerticalAlignment="Top" Width="98" TabIndex="1" Click="btnSelect_Click"/>
+        <Button x:Name="btnSelect" Content="Select" HorizontalAlignment="Left" Margin="196,226,0,0" VerticalAlignment="Top" Width="125" TabIndex="1" Click="btnSelect_Click"/>
         <Image x:Name="imgLogo" Margin="174,0,195,279" Source="logo.png" Stretch="Fill"/>
         <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="467,60,0,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click" TabIndex="8"/>
 
