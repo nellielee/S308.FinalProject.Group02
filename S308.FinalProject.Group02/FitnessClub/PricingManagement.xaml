@@ -34,7 +34,6 @@
         <Button x:Name="btnSelect" Content="Select" HorizontalAlignment="Left" Margin="196,226,-2,0" VerticalAlignment="Top" Width="98" TabIndex="1"/>
         <Image x:Name="imgLogo" Margin="174,0,195,279" Source="logo.png" Stretch="Fill"/>
         <Button x:Name="btnExit" Content="Exit" HorizontalAlignment="Left" Margin="467,60,0,0" VerticalAlignment="Top" Width="126" Click="btnExit_Click" TabIndex="8"/>
-        <DataGrid x:Name="dtgResults" HorizontalAlignment="Left" Height="58" Margin="50,267,0,0" VerticalAlignment="Top" Width="244" IsReadOnly="True"/>
 
     </Grid>
 </Window>
