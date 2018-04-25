@@ -14,10 +14,11 @@ using System.Windows.Shapes;
 using PricingData;
 using System.IO;
 using Newtonsoft.Json;
-//how do i append to a list, should i make them type in all of the corrections?
-    //edit new price
-    //edit new availability
-//what is the default availability
+
+//fill combo box from json file
+//loop or query thru and find where type = individual 1 month to output the price and availability in boxes
+//find what's listed in dropdown, change properties (price and availability), and researizlise (write over)
+ 
 namespace FitnessClub
 {
     /// <summary>
@@ -28,74 +29,78 @@ namespace FitnessClub
         List<Pricing> pricingList;
         public PricingManagement()
         {
-         
-                InitializeComponent();
-                pricingList = getdatasetfromfile();
-                //instantiate a list to hold lsit
-                //set the source of the datagrid and refresh
-                dtgResults.ItemsSource = pricingList;
-                dtgResults.Items.Refresh();
 
+            InitializeComponent();
+            pricingList = getdatasetfromfile();
+            //instantiate a list to hold lsit
+            //set the source of the combobox and refresh
+            cboType.ItemsSource = pricingList;
+            cboType.Items.Refresh();
+
+        }
+
+        public List<Pricing> getdatasetfromfile()
+        {
+            List<Pricing> pricing = new List<Pricing>();
+
+            string strfilepath = @"../../Data/Pricing.json";
+            try
+            {
+                // //use System.IO.File to read the entire data file
+                string jsondata = File.ReadAllText(strfilepath);
+                //serialize the json data to a list of customers
+                pricing = JsonConvert.DeserializeObject<List<Pricing>>(jsondata);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in pricing list" + ex.Message);
+            }
+            return pricing;
+        }
+
+       
+
+        private void btnSelect_Click(object sender, RoutedEventArgs e)
+        {
+            string strfilepath = @"../../Data/Pricing.json";
+
+ //loop or query thru and find where type = individual 1 month to output the price and availability in boxes
+
+
+
+            //declare variables
+            string strNewPrice;
+            int intNewPrice;
+            // string strCombo = ((ComboBoxItem)cboMembershipType.SelectedItem).Content.ToString();
+
+            //validation
+
+            if (!Int32.TryParse(txtNewPrice.Text, out intNewPrice))
+            {
+                MessageBox.Show("Please enter a new price without formatting.");
+                return;
+            }
+            strNewPrice = txtNewPrice.Text.Trim();
+            if (!strNewPrice.Contains("."))
+            {
+                MessageBox.Show("Please enter a price including the cents. Ex: 99.99");
+                return;
             }
 
-            public List<Pricing> getdatasetfromfile()
+            if (cboType.SelectedIndex == -1)
             {
-                List<Pricing> pricing = new List<Pricing>();
-
-                string strfilepath = @"../../Data/Pricing.json";
-                try
-                {
-                    // //use System.IO.File to read the entire data file
-                    string jsondata = File.ReadAllText(strfilepath);
-                    //serialize the json data to a list of customers
-                    pricing = JsonConvert.DeserializeObject<List<Pricing>>(jsondata);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error in pricing list" + ex.Message);
-                }
-                return pricing;
+                MessageBox.Show("Please select a membership type.");
+                return;
             }
-            
-
-
-            private void btnSelect_Click(object sender, RoutedEventArgs e)
+            if (cboOffered.SelectedIndex == -1)
             {
-                string strfilepath = @"../../Data/Pricing.json";
+                MessageBox.Show("Please select an offering type.");
+                return;
+            }
 
-                //declare variables
-                string strNewPrice;
-                int intNewPrice;
-                // string strCombo = ((ComboBoxItem)cboMembershipType.SelectedItem).Content.ToString();
-               
-                //validation
-               
-                if (!Int32.TryParse(txtNewPrice.Text, out intNewPrice))
-                {
-                    MessageBox.Show("Please enter a new price without formatting.");
-                    return;
-                }
-                strNewPrice = txtNewPrice.Text.Trim();
-                if (!strNewPrice.Contains("."))
-                {
-                    MessageBox.Show("Please enter a price including the cents. Ex: 99.99");
-                    return;
-                }
-
-                if (cboType.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Please select a membership type.");
-                    return;
-                }
-                if (cboOffered.SelectedIndex == -1)
-                {
-                    MessageBox.Show("Please select an offering type.");
-                    return;
-                }
-
-                //instantiate a new type from the input and add it to the list
-                Pricing pricingNew = new Pricing(txtType.Text.Trim(), txtNewPrice.Text.Trim(), txtAvailability.Text.Trim(),
-                     cboType.Text, cboOffered.Text);
+            //instantiate a new type from the input and add it to the list
+            Pricing pricingNew = new Pricing(txtType.Text.Trim(), txtNewPrice.Text.Trim(), txtAvailability.Text.Trim(),
+                 cboType.Text, cboOffered.Text);
             //edit new price
             string strPrice = txtPrice.ToString();
             strNewPrice = txtNewPrice.ToString();
@@ -105,24 +110,24 @@ namespace FitnessClub
             pricingList.Add(pricingNew);
             //edit availability
 
-                try
-                {
-                    //serialize the new list of membership types to json format
-                    string jsonData = JsonConvert.SerializeObject(pricingList);
+            try
+            {
+                //serialize the new list of membership types to json format
+                string jsonData = JsonConvert.SerializeObject(pricingList);
 
-                    //use System.IO.File to write over the file with the json data
-                    System.IO.File.WriteAllText(strfilepath, jsonData);
+                //use System.IO.File to write over the file with the json data
+                System.IO.File.WriteAllText(strfilepath, jsonData);
 
 
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error in export process: " + ex.Message);
-                }
-
-                MessageBox.Show("Membership type added!" + Environment.NewLine + pricingNew.ToString());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in export process: " + ex.Message);
             }
 
+            MessageBox.Show("Membership type added!" + Environment.NewLine + pricingNew.ToString());
+        }
+    
        
 
         private void btnSubmitChanges_Click(object sender, RoutedEventArgs e)
