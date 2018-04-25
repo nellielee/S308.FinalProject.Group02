@@ -10,7 +10,12 @@ namespace FitnessClub
     {
         //properties
         public string FirstName { get; set; }
-        public string LastName { get; set; }        public string CreditCardType { get; set; }        public string CreditCardNumber { get; set; }        public string Phone { get; set; }        public string Email { get; set; }        public string Gender { get; set; }
+        public string LastName { get; set; }
+        public string CreditCardType { get; set; }
+        public string CreditCardNumber { get; set; }
+        public string Phone { get; set; }
+        public string Email { get; set; }
+        public string Gender { get; set; }
         public string Age { get; set; }
         public string Weight { get; set; }
         public string PersonalFitnessGoal { get; set; }
@@ -38,7 +43,8 @@ namespace FitnessClub
         //overrride
 
         
-            public override string ToString()
+            public override string ToString()
+
         {
             string strOutput = "";
 

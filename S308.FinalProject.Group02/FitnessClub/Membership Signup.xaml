@@ -5,48 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessClub"
         mc:Ignorable="d"
-        Title="Membership_Signup" Height="473" Width="502" WindowStartupLocation="CenterScreen">
+        Title="Membership_Signup" Height="474" Width="580" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label x:Name="lblLastName" Content="Last Name*" HorizontalAlignment="Left" Margin="40,156,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="21" Margin="151,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="0"/>
+        <TextBox x:Name="txtLastName" HorizontalAlignment="Left" Height="21" Margin="151,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="1"/>
         <Label x:Name="lblEmail" Content="Email*" HorizontalAlignment="Left" Margin="40,180,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="21" Margin="151,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="1"/>
-        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="21" Margin="151,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="2"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="21" Margin="151,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="2"/>
+        <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="21" Margin="151,214,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="3"/>
         <Label x:Name="lblPhone" Content="Phone Number*" HorizontalAlignment="Left" Margin="40,209,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblMemberSignUp" Content="Member Sign Up" HorizontalAlignment="Left" Height="31" Margin="40,47,0,0" VerticalAlignment="Top" Width="177" FontSize="16" FontWeight="Bold"/>
         <Label x:Name="lblMSUInstructions" Content="Please enter the following information to confirm your &#xD;&#xA;new membership. Required information will have a *" HorizontalAlignment="Left" Margin="40,83,0,0" VerticalAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Visible" Width="334"/>
         <Label x:Name="lblFirstNamey" Content="First Name*" HorizontalAlignment="Left" Margin="40,130,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtFirstName" HorizontalAlignment="Left" Height="21" Margin="151,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="0"/>
         <Label x:Name="lblCreditCardType" Content="Credit Card Type*" HorizontalAlignment="Left" Margin="40,240,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtCreditCardNumber" HorizontalAlignment="Left" Height="21" Margin="151,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="2"/>
+        <TextBox x:Name="txtCreditCardNumber" HorizontalAlignment="Left" Height="21" Margin="151,276,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="5"/>
         <Label x:Name="lblCreditCardNumber" Content="Card Number*" HorizontalAlignment="Left" Margin="40,271,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblGender" Content="Gender*" HorizontalAlignment="Left" Margin="40,302,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="21" Margin="151,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="2"/>
+        <TextBox x:Name="txtAge" HorizontalAlignment="Left" Height="21" Margin="151,338,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="7"/>
         <Label x:Name="lblAge" Content="Age" HorizontalAlignment="Left" Margin="40,333,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtPhone_Copy4" HorizontalAlignment="Left" Height="21" Margin="151,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="2"/>
+        <TextBox x:Name="txtPhone_Copy4" HorizontalAlignment="Left" Height="21" Margin="151,364,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="8"/>
         <Label x:Name="lblWeight" Content="Weight" HorizontalAlignment="Left" Margin="40,359,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblFitnessGoal" Content="Fitness Goal" HorizontalAlignment="Left" Margin="40,390,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cboCardType" HorizontalAlignment="Left" Margin="151,244,0,0" VerticalAlignment="Top" Width="132" SelectedIndex="0">
+        <ComboBox x:Name="cboCardType" HorizontalAlignment="Left" Margin="151,244,0,0" VerticalAlignment="Top" Width="132" SelectedIndex="0" TabIndex="4">
             <ComboBoxItem Content="AMEX"/>
             <ComboBoxItem Content="Discover"/>
             <ComboBoxItem Content="MasterCard"/>
             <ComboBoxItem Content="VISA"/>
         </ComboBox>
-        <ComboBox x:Name="cboGender" HorizontalAlignment="Left" Margin="151,306,0,0" VerticalAlignment="Top" Width="132" SelectedIndex="0">
+        <ComboBox x:Name="cboGender" HorizontalAlignment="Left" Margin="151,306,0,0" VerticalAlignment="Top" Width="132" SelectedIndex="0" TabIndex="6">
             <ComboBoxItem Content="Male"/>
             <ComboBoxItem Content="Female"/>
             <ComboBoxItem Content="Other"/>
         </ComboBox>
-        <ComboBox x:Name="cboFitnessGoal" HorizontalAlignment="Left" Margin="151,394,0,0" VerticalAlignment="Top" Width="132" SelectedIndex="0">
+        <ComboBox x:Name="cboFitnessGoal" HorizontalAlignment="Left" Margin="151,394,0,0" VerticalAlignment="Top" Width="132" SelectedIndex="0" TabIndex="9">
             <ComboBoxItem Content="No Fitness Goal"/>
             <ComboBoxItem Content="Athletic Performance"/>
             <ComboBoxItem Content="Overall Health"/>
             <ComboBoxItem Content="Strength Training Weight Loss"/>
             <ComboBoxItem Content="Weight Management"/>
         </ComboBox>
-        <Button x:Name="btnCreateMember" Content="Create Member" HorizontalAlignment="Left" Margin="304,416,0,0" VerticalAlignment="Top" Width="100" Click="btnCreateMember_Click"/>
-        <Button x:Name="btnReturn" Content="Main Menu" HorizontalAlignment="Left" Margin="379,58,0,0" VerticalAlignment="Top" Width="75" Click="btnReturn_Click"/>
+        <Button x:Name="btnCreateMember" Content="Create Member" HorizontalAlignment="Left" Margin="304,416,0,0" VerticalAlignment="Top" Width="100" Click="btnCreateMember_Click" TabIndex="10"/>
+        <Button x:Name="btnReturn" Content="Main Menu" HorizontalAlignment="Left" Margin="379,58,0,0" VerticalAlignment="Top" Width="75" Click="btnReturn_Click" TabIndex="11"/>
         <Image x:Name="imgLogo" Margin="128,0,122,386" Source="logo.png" Stretch="Fill"/>
+        <TextBox x:Name="txtConfirmation" HorizontalAlignment="Left" Height="249" Margin="318,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="213" TabIndex="2" IsReadOnly="True"/>
 
     </Grid>
 </Window>

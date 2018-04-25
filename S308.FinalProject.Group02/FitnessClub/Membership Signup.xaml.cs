@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Newtonsoft.Json;
+using System.IO;
+
+
 
 
 namespace FitnessClub
@@ -19,11 +23,39 @@ namespace FitnessClub
     /// Interaction logic for Membership_Signup.xaml
     /// </summary>
     public partial class Membership_Signup : Window
-    {
+    { 
+        //instantiate a list for members
+        List<Member> memberList;
+
+    
         public Membership_Signup()
         {
             InitializeComponent();
+
+            memberList = new List<Member>();
+            ImportMemberData();
         }
+
+        private void ImportCustomerData()
+        {
+            //set up path to file
+            string strFilePath = @"..\..\..\..\Members.json";
+
+            //use System.IO.File to read the entire data file
+            try
+            {
+                string jsonData = File.ReadAllText(strFilePath);
+
+                //serialize the json data to a list of customers
+                memberList = JsonConvert.DeserializeObject<List<Member>>(jsonData);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in import process: " + ex.Message);
+            }
+        }
+
+
         //messagebox confirmation
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {
@@ -34,6 +66,9 @@ namespace FitnessClub
 
         private void btnCreateMember_Click(object sender, RoutedEventArgs e)
         {
+            string strFilePath = @"..\..\..\..\Members.json";
+
+
             // do we need this here?
             //MainMenu mainmenuWindow = new MainMenu();
             //mainmenuWindow.Show();
@@ -41,7 +76,7 @@ namespace FitnessClub
 
             //create variables
             string strFirstName, strLastName, strCreditCardType, strPhone, strEmail, strGender, strFitnessGoal, strAge, strWeight;
-            int intWeight;
+            int intWeight, intPhone;
             byte bytAge;
             
 
@@ -75,7 +110,20 @@ namespace FitnessClub
             }
             strEmail = txtEmail.Text;
 
-            //Phone Number - required -- ADD
+            //Phone Number - required
+            if (!Int32.TryParse(txtPhone.Text.Trim(), out intPhone))
+            {
+                MessageBox.Show("Please enter a phone number as a string of numbers.");
+                return;
+            }
+
+            strPhone = txtPhone.Text.Trim();
+
+            if (strPhone.Length != 10)
+            {
+                MessageBox.Show("You must provide a 10 digit phone number.");
+                return;
+            }
 
 
 
@@ -135,7 +183,7 @@ namespace FitnessClub
 
 
             //5. Validate card number
-            //ASK THIS SHOULD WORK
+           
             strCardNum = ReverseString(strCardNum);
 
             for (i = 0; i < strCardNum.Length; i++)
@@ -194,8 +242,12 @@ namespace FitnessClub
             ComboBoxItem cbiSelectedFitnessGoal = (ComboBoxItem)cboFitnessGoal.SelectedItem;
             strFitnessGoal = cbiSelectedFitnessGoal.Content.ToString();
 
+            //instantiate a new Member from the input and add it to the list
+            Member memberNew = new Member(strFirstName, strLastName, str strEmail, strPhone, strCustomerType);
+            customerList.Add(customerNew);
 
-            
+
+
 
         }
         public static string ReverseString(string s)
