@@ -23,7 +23,9 @@ namespace FitnessClub
     /// Interaction logic for Membership_Signup.xaml
     /// </summary>
     public partial class Membership_Signup : Window
-    { 
+    {
+        //public Quote MyQuote { get; set; }
+
         //instantiate a list for members
         List<Member> memberList;
 

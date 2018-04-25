@@ -19,7 +19,7 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSales : Window
     {
-        public string MyInfo { get; set; }
+       // public Quote MyQuote { get; set; }
         public MembershipSales()
         {
             InitializeComponent();
@@ -141,7 +141,7 @@ namespace FitnessClub
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             //this.Close();
-            MessageBox.Show(MyInfo);
+           
         }
 
 
@@ -163,6 +163,7 @@ namespace FitnessClub
         private void btnMemberInformation_Click(object sender, RoutedEventArgs e)
         {
             MemberInformation memberinfoWindow = new MemberInformation();
+
             memberinfoWindow.Show();
             this.Close();
         }
@@ -177,6 +178,7 @@ namespace FitnessClub
         private void btnProceed_Click(object sender, RoutedEventArgs e)
         {
             Membership_Signup membersignupWindow = new Membership_Signup();
+            //membersignupWindow.MyQuote = "Info I want to send to the next window";
             membersignupWindow.Show();
             this.Close();
         }

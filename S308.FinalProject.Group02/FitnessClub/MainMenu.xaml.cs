@@ -43,7 +43,7 @@ namespace FitnessClub
         private void btnMembershipSales_Click(object sender, RoutedEventArgs e)
         {
             MembershipSales membersaleWindow = new MembershipSales();
-            membersaleWindow.MyInfo = "Info I want to send to the next window";
+            //membersaleWindow.MyInfo = "Info I want to send to the next window";
             membersaleWindow.Show();
             this.Close();
         }
