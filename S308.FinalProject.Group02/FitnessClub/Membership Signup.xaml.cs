@@ -81,9 +81,9 @@ namespace FitnessClub
 
             //create variables
             string strFirstName, strLastName, strCreditCardType, strCreditCardNumber, strPhone, strEmail, strGender, strPersonalFitnessGoal, strAge, strWeight;
-            int intWeight, intPhone;
+            int intWeight;
             byte bytAge;
-
+            long lngPhone;
 
             //validate first name - required 
             if (txtFirstName.Text == "")
@@ -116,11 +116,12 @@ namespace FitnessClub
             strEmail = txtEmail.Text;
 
             //Phone Number - required
-            if (!Int32.TryParse(txtPhone.Text.Trim(), out intPhone))
+            if (!long.TryParse(txtPhone.Text.Trim(), out lngPhone))
             {
                 MessageBox.Show("Please enter a phone number as a string of numbers.");
                 return;
             }
+
 
             strPhone = txtPhone.Text.Trim();
 
