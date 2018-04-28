@@ -127,7 +127,7 @@ namespace FitnessClub
 
             if (strPhone.Length != 10)
             {
-                MessageBox.Show("You must provide a 10 digit phone number.");
+                MessageBox.Show("You must provide a 10 digit phone number. Example: 8349849820.");
                 return;
             }
 

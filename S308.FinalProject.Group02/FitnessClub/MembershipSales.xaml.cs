@@ -54,22 +54,7 @@ namespace FitnessClub
 
 
             //set number of months of membership to calcualte out additional costs
-            //switch (strType)
-            //{
-            //    case "Individual 1 Month: $9.99":
-            //    case "Two Person 1 Month: $14.99":
-            //    case "Family 1 Month: $19.99":
-            //        dblNumberOfMonths = 1;
-            //        break;
-            //    case "Individual 12 Month: $100.00":
-            //    case "Two Person 12 Month: $150.00":
-            //    case "Family 12 Month: $200.00":
-            //        dblNumberOfMonths = 12;
-            //        break;          
-            //    default:
-            //        MessageBox.Show("Please select a membership type.");
-            //        break;
-            //}
+           
 
             if(strType == "Individual 1 Month: $9.99" || strType == "Two Person 1 Month: $14.99"|| strType== "Family 1 Month: $19.99")
             {
