@@ -30,11 +30,19 @@ namespace FitnessClub
             //define variables to hold information from user input
             string strType, strPersonalTraining, strLockerRental;
             double dblPersonalTraining, dblLocker, dblMembership, dblNumberOfMonths, dblTotal, dblSubtotal, dblCostPerMonth, dblAdditionalFeatures;
-            
 
             //type combo
             ComboBoxItem cbiSelectedType = (ComboBoxItem)cboType.SelectedItem;
             strType = cbiSelectedType.Content.ToString();
+
+            //start date and date picker
+            DateTime? datStartDate = dtpStartDate.SelectedDate;
+            //validate start date is not null
+            if (datStartDate == null)
+            {
+                MessageBox.Show("Please select a Start Date using the date picker.");
+                return;
+            }
 
             //Personal Training Combo
             ComboBoxItem cbiSelectedTraining = (ComboBoxItem)cboPtp.SelectedItem;
@@ -59,7 +67,7 @@ namespace FitnessClub
                     dblNumberOfMonths = 12;
                     break;          
                 default:
-                    dblNumberOfMonths = 1;
+                    MessageBox.Show("Please select a membership type.");
                     break;
             }
 
@@ -69,7 +77,7 @@ namespace FitnessClub
             //set price if locker rental
             switch(strLockerRental)
             {
-                case "Include: $1.00 per month":
+                case "Include":
                     dblLocker = 1;
                     break;
                 default:
@@ -81,7 +89,7 @@ namespace FitnessClub
             //set price if personal training included
             switch (strPersonalTraining)
             {
-                case "Include: $5.00 per month":
+                case "Include":
                     dblPersonalTraining = 5;
                     break;
                 default:
@@ -111,7 +119,24 @@ namespace FitnessClub
                     dblMembership = 200.00;
                     break;
                 default:
-                    dblMembership = 9.99;
+                    dblMembership = 0;
+                    break;
+            }
+
+            //Calculate the End Date
+            DateTime? datEndDate = datStartDate;
+
+            switch (strType)
+            {
+                case "Individual 1 Month: $9.99":
+                case "Two Person 1 Month: $14.99":
+                case "Family 1 Month: $19.99":
+                    datEndDate = datStartDate.Value.AddMonths(1);
+                    break;
+                case "Individual 12 Month: $100.00":
+                case "Two Person 12 Month: $150.00":
+                case "Family 12 Month: $200.00":
+                    datEndDate = datStartDate.Value.AddMonths(12);
                     break;
             }
 
@@ -120,16 +145,20 @@ namespace FitnessClub
             dblSubtotal = dblMembership;
             dblAdditionalFeatures = dblLocker + dblPersonalTraining;
             dblTotal = dblSubtotal + dblAdditionalFeatures;
-
-
-            string strStartDate = "2017-04-04";
-            string strEndDate = "2019-04-04";
+            
+            //Date format to string
+            string strStartDate = datStartDate.ToString(), strEndDate = datEndDate.ToString();
+            //    String format of date includes hours
+            //    might be because set as DateTime? not DateTime, but date wouldn't work as DateTIme
+            //    was using Demo 16 for help
+            //string strStartDate = "2017-04-04";
+            //string strEndDate = "2019-04-04";
 
             MyQuote = new Quote(strType, strStartDate, strEndDate, strPersonalTraining, strLockerRental);
             //output into textboxes - rectangle is just a boarder --placeholder code
-            lblPqType2.Content =strType;
-            lblPqStartDate2.Content = "";
-            lblPqEndDate2.Content = "";
+            lblPqType2.Content = strType;
+            lblPqStartDate2.Content = strStartDate;
+            lblPqEndDate2.Content = strEndDate;
             lblPqCostPerMonth2.Content = dblCostPerMonth.ToString();
             lblAdditionalFeatures2.Content = dblAdditionalFeatures.ToString();
             lblPqTotal2.Content = dblTotal.ToString();

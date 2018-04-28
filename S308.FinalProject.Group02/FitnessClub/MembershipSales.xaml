@@ -15,11 +15,11 @@
         <Label x:Name="lblInstructions" Content="Please enter in the following items to return a pricing quote. " HorizontalAlignment="Left" Margin="33,129,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblType" Content="Type" HorizontalAlignment="Left" Margin="33,171,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblStartDate" Content="Start Date" HorizontalAlignment="Left" Margin="33,202,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dtpStartDate" HorizontalAlignment="Left" Margin="192,208,0,0" VerticalAlignment="Top" Width="172"/>
         <Label x:Name="lblAdditionalFeatures" Content="Additional features (optional):" HorizontalAlignment="Left" Margin="33,228,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
         <Label x:Name="lblPtp" Content="Personal Training Plan" HorizontalAlignment="Left" Margin="33,254,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblLocker" Content="Locker Rental" HorizontalAlignment="Left" Margin="33,280,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPricingQuote" Content="Pricing Quote Preview:" HorizontalAlignment="Left" Margin="375,161,0,0" VerticalAlignment="Top" FontSize="13.333"/>
-        <TextBox x:Name="txtStartDate" HorizontalAlignment="Left" Height="23" Margin="192,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="172" TabIndex="1"/>
         <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="192,179,0,0" VerticalAlignment="Top" Width="172" TabIndex="0" SelectedIndex="0">
             <ComboBoxItem Content="Individual 1 Month: $9.99"/>
             <ComboBoxItem Content="Individual 12 Month: $100.00"/>
