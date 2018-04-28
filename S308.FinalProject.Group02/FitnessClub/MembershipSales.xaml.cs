@@ -59,7 +59,7 @@ namespace FitnessClub
                     dblNumberOfMonths = 12;
                     break;          
                 default:
-                    MessageBox.Show("Please select a membership type.");
+                    dblNumberOfMonths = 1;
                     break;
             }
 
@@ -69,7 +69,7 @@ namespace FitnessClub
             //set price if locker rental
             switch(strLockerRental)
             {
-                case "Include":
+                case "Include: $1.00 per month":
                     dblLocker = 1;
                     break;
                 default:
@@ -81,7 +81,7 @@ namespace FitnessClub
             //set price if personal training included
             switch (strPersonalTraining)
             {
-                case "Include":
+                case "Include: $5.00 per month":
                     dblPersonalTraining = 5;
                     break;
                 default:
@@ -111,7 +111,7 @@ namespace FitnessClub
                     dblMembership = 200.00;
                     break;
                 default:
-                    dblMembership = 0;
+                    dblMembership = 9.99;
                     break;
             }
 
@@ -127,7 +127,7 @@ namespace FitnessClub
 
             MyQuote = new Quote(strType, strStartDate, strEndDate, strPersonalTraining, strLockerRental);
             //output into textboxes - rectangle is just a boarder --placeholder code
-            lblPqType2.Content = "";
+            lblPqType2.Content =strType;
             lblPqStartDate2.Content = "";
             lblPqEndDate2.Content = "";
             lblPqCostPerMonth2.Content = dblCostPerMonth.ToString();
