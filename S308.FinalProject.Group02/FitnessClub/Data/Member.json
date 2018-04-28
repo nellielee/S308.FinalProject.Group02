@@ -1,0 +1,18 @@
+﻿[
+  {
+    "FirstName": "Homer",
+    "LastName": "Simpson",
+    "CreditCardType": "VISA",
+    "CreditCardNumber": "4111111111111111",
+    "Phone": "8127378849",
+    "Email": "homer@simpson.com",
+    "Age": "54",
+    "Weight": "150",
+    "PersonalFitnessGoal":"",
+    "Type": "Two Person 1 Month: $14.99",
+    "StartDate": "",
+    "EndDate": "",
+    "PersonalTraining": "",
+    "LockerRental": ""
+  }
+]

@@ -54,30 +54,38 @@ namespace FitnessClub
 
 
             //set number of months of membership to calcualte out additional costs
-            switch (strType)
+            //switch (strType)
+            //{
+            //    case "Individual 1 Month: $9.99":
+            //    case "Two Person 1 Month: $14.99":
+            //    case "Family 1 Month: $19.99":
+            //        dblNumberOfMonths = 1;
+            //        break;
+            //    case "Individual 12 Month: $100.00":
+            //    case "Two Person 12 Month: $150.00":
+            //    case "Family 12 Month: $200.00":
+            //        dblNumberOfMonths = 12;
+            //        break;          
+            //    default:
+            //        MessageBox.Show("Please select a membership type.");
+            //        break;
+            //}
+
+            if(strType == "Individual 1 Month: $9.99" || strType == "Two Person 1 Month: $14.99"|| strType== "Family 1 Month: $19.99")
             {
-                case "Individual 1 Month: $9.99":
-                case "Two Person 1 Month: $14.99":
-                case "Family 1 Month: $19.99":
-                    dblNumberOfMonths = 1;
-                    break;
-                case "Individual 12 Month: $100.00":
-                case "Two Person 12 Month: $150.00":
-                case "Family 12 Month: $200.00":
-                    dblNumberOfMonths = 12;
-                    break;          
-                default:
-                    MessageBox.Show("Please select a membership type.");
-                    break;
+                dblNumberOfMonths = 1;
+            }
+            else
+            {
+                dblNumberOfMonths = 12;
             }
 
-
-            dblNumberOfMonths = 0;
+            
 
             //set price if locker rental
             switch(strLockerRental)
             {
-                case "Include":
+                case "Include: $1.00 per month":
                     dblLocker = 1;
                     break;
                 default:
@@ -89,7 +97,7 @@ namespace FitnessClub
             //set price if personal training included
             switch (strPersonalTraining)
             {
-                case "Include":
+                case "Include: $5.00 per month":
                     dblPersonalTraining = 5;
                     break;
                 default:
@@ -159,10 +167,10 @@ namespace FitnessClub
             lblPqType2.Content = strType;
             lblPqStartDate2.Content = strStartDate;
             lblPqEndDate2.Content = strEndDate;
-            lblPqCostPerMonth2.Content = dblCostPerMonth.ToString();
-            lblAdditionalFeatures2.Content = dblAdditionalFeatures.ToString();
-            lblPqTotal2.Content = dblTotal.ToString();
-            lblPqSubtotal1.Content = dblSubtotal.ToString();
+            lblPqCostPerMonth2.Content = dblCostPerMonth.ToString("C2");
+            lblAdditionalFeatures2.Content = dblAdditionalFeatures.ToString("C2");
+            lblPqTotal2.Content = dblTotal.ToString("C2");
+            lblPqSubtotal1.Content = dblSubtotal.ToString("C2");
            
 
 

@@ -42,7 +42,7 @@ namespace FitnessClub
         private void ImportMemberData()
         {
             //set up path to file
-            string strFilePath = @"..\..\..\..\Members.json";
+            string strFilePath = @"..\..\..\..\Member.json";
 
             //use System.IO.File to read the entire data file
             try
@@ -71,7 +71,7 @@ namespace FitnessClub
 
         private void btnCreateMember_Click(object sender, RoutedEventArgs e)
         {
-            string strFilePath = @"..\..\..\..\Members.json";
+            string strFilePath = @"..\..\..\..\Member.json";
 
 
             // do we need this here?
@@ -222,6 +222,11 @@ namespace FitnessClub
 
             //do we even need a credit card type?
 
+            if(strCreditCardType != strCardType)
+            {
+                MessageBox.Show("Please check to make sure you entered the correct card type and card number");
+                    return;
+            }
 
             //valdate gender - required - cbo
 
@@ -241,7 +246,7 @@ namespace FitnessClub
             //validate weight
             if (!Int32.TryParse(txtAge.Text, out intWeight))
             {
-                MessageBox.Show("Please enter a number for your weight");
+                MessageBox.Show("Please enter the number of lbs you weigh");
                 return;
             }
             strWeight = intWeight.ToString();

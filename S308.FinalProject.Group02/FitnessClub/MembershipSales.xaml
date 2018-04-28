@@ -43,10 +43,10 @@
         <Label x:Name="lblPqSubtotal" Content="Subtotal" HorizontalAlignment="Left" Margin="397,298,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
         <Label x:Name="lblPqAdditionalFeatures" Content="Additional features" HorizontalAlignment="Left" Margin="397,324,0,0" VerticalAlignment="Top" FontStyle="Italic"/>
         <Label x:Name="lblPqTotal" Content="Total" HorizontalAlignment="Left" Margin="397,350,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
-        <Rectangle x:Name="rctBoarder" HorizontalAlignment="Left" Height="198" Margin="375,194,0,0" Stroke="Black" VerticalAlignment="Top" Width="223"/>
-        <Label x:Name="lblPqType2" Content="" HorizontalAlignment="Left" Margin="465,194,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblPqStartDate2" Content="" HorizontalAlignment="Left" Margin="515,225,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,2.077"/>
-        <Label x:Name="lblPqEndDate2" Content="" HorizontalAlignment="Left" Margin="515,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,2.077"/>
+        <Rectangle x:Name="rctBoarder" HorizontalAlignment="Left" Height="198" Margin="375,194,0,0" Stroke="Black" VerticalAlignment="Top" Width="255"/>
+        <Label x:Name="lblPqType2" Content="" HorizontalAlignment="Left" Margin="437,192,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPqStartDate2" Content="" HorizontalAlignment="Left" Margin="461,220,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,2.077"/>
+        <Label x:Name="lblPqEndDate2" Content="" HorizontalAlignment="Left" Margin="461,246,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,2.077"/>
         <Label x:Name="lblPqCostPerMonth2" Content="" HorizontalAlignment="Left" Margin="515,272,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,2.077"/>
         <Label x:Name="lblPqSubtotal1" Content="" HorizontalAlignment="Left" Margin="515,298,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,2.077"/>
         <Label x:Name="lblAdditionalFeatures2" Content="" HorizontalAlignment="Left" Margin="515,324,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.3,2.077"/>
