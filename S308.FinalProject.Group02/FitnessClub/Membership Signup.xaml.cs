@@ -42,7 +42,7 @@ namespace FitnessClub
         private void ImportMemberData()
         {
             //set up path to file
-            string strFilePath = @"..\..\..\..\Member.json";
+            string strFilePath = @"..\..\..\FitnessClub\Data\Member.json";
 
             //use System.IO.File to read the entire data file
             try
@@ -71,7 +71,7 @@ namespace FitnessClub
 
         private void btnCreateMember_Click(object sender, RoutedEventArgs e)
         {
-            string strFilePath = @"..\..\..\..\Member.json";
+            string strFilePath = @"..\..\..\FitnessClub\Data\Member.json";
 
 
             // do we need this here?
@@ -235,21 +235,42 @@ namespace FitnessClub
 
 
             //validate age 
-            if (!Byte.TryParse(txtAge.Text, out bytAge))
+            if (string.IsNullOrEmpty(txtAge.Text))
             {
-                MessageBox.Show("Please enter a number for your age");
-                return;
+                strAge = "";
             }
-
-            strAge = bytAge.ToString();
+            else
+            {
+                if (!Byte.TryParse(txtAge.Text, out bytAge))
+                {
+                    MessageBox.Show("Please enter a number for your age");
+                    return;
+                }
+                else
+                {
+                    strAge = bytAge.ToString();
+                }
+            }
+            
 
             //validate weight
-            if (!Int32.TryParse(txtAge.Text, out intWeight))
+            
+            if (string.IsNullOrEmpty(txtWeight.Text))
             {
-                MessageBox.Show("Please enter the number of lbs you weigh");
-                return;
+                strWeight = "";
             }
-            strWeight = intWeight.ToString();
+            else
+            {
+                if (!Int32.TryParse(txtWeight.Text, out intWeight))
+                {
+                    MessageBox.Show("Please enter the number of lbs you weigh");
+                    return;
+                }
+                else
+                {
+                    strWeight = intWeight.ToString();
+                }
+            }
 
             //validate fitness goal - cbo
             ComboBoxItem cbiSelectedFitnessGoal = (ComboBoxItem)cboFitnessGoal.SelectedItem;
@@ -272,9 +293,18 @@ namespace FitnessClub
             }
 
             //output result of new member into result textbox as confirmation
-            
 
-
+            txtConfirmation.Text = "First Name: " + strFirstName + Environment.NewLine;
+            txtConfirmation.Text += "Last Name: " + strLastName + Environment.NewLine;
+            txtConfirmation.Text += "Credit Card Type: " + strCreditCardType + Environment.NewLine;
+            txtConfirmation.Text += "Credit Card Number: " + strCreditCardNumber + Environment.NewLine;
+            txtConfirmation.Text += "Phone: " + strPhone + Environment.NewLine;
+            txtConfirmation.Text += "Email: " + strEmail + Environment.NewLine;
+            txtConfirmation.Text += "Age: " + strAge + Environment.NewLine;
+            txtConfirmation.Text += "Weight: " + strWeight + Environment.NewLine;
+            txtConfirmation.Text += "Personal Fitness Goal: " + strPersonalFitnessGoal + Environment.NewLine;
+            txtConfirmation.Text += myQuote.ToString();
+         
 
 
         }

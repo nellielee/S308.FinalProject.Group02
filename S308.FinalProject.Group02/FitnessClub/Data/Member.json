@@ -1,18 +1,1 @@
-﻿[
-  {
-    "FirstName": "Homer",
-    "LastName": "Simpson",
-    "CreditCardType": "VISA",
-    "CreditCardNumber": "4111111111111111",
-    "Phone": "8127378849",
-    "Email": "homer@simpson.com",
-    "Age": "54",
-    "Weight": "150",
-    "PersonalFitnessGoal":"",
-    "Type": "Two Person 1 Month: $14.99",
-    "StartDate": "",
-    "EndDate": "",
-    "PersonalTraining": "",
-    "LockerRental": ""
-  }
-]
+[{"FirstName":"Homer","LastName":"Simpson","CreditCardType":"VISA","CreditCardNumber":"4111111111111111","Phone":"8127378849","Email":"homer@simpson.com","Gender":null,"Age":"54","Weight":"150","PersonalFitnessGoal":"","Type":"Two Person 1 Month: $14.99","StartDate":"","EndDate":"","PersonalTraining":"","LockerRental":""},{"FirstName":"Teri","LastName":"Principe","CreditCardType":"MasterCard","CreditCardNumber":"4444555555555555","Phone":"4903086039","Email":"t@iu.edu","Gender":"Female","Age":"21","Weight":"21","PersonalFitnessGoal":"No Fitness Goal","Type":"Individual 1 Month: $9.99","StartDate":"4/28/2018 12:00:00 AM","EndDate":"5/28/2018 12:00:00 AM","PersonalTraining":"Include: $5.00 per month","LockerRental":"Include: $1.00 per month"},{"FirstName":"Kim","LastName":"Anderson","CreditCardType":"MasterCard","CreditCardNumber":"4444777766665555","Phone":"3408342354","Email":"r@iu.edu","Gender":"Female","Age":"34","Weight":"34","PersonalFitnessGoal":"No Fitness Goal","Type":"Individual 1 Month: $9.99","StartDate":"4/28/2018 12:00:00 AM","EndDate":"5/28/2018 12:00:00 AM","PersonalTraining":"Do Not Include","LockerRental":"Do Not Include"},{"FirstName":"Sam","LastName":"Jones","CreditCardType":"MasterCard","CreditCardNumber":"4444555555555555","Phone":"3985030943","Email":"s@iu.edu","Gender":"Male","Age":"","Weight":"","PersonalFitnessGoal":"No Fitness Goal","Type":"Two Person 1 Month: $14.99","StartDate":"4/28/2018 12:00:00 AM","EndDate":"5/28/2018 12:00:00 AM","PersonalTraining":"Do Not Include","LockerRental":"Include: $1.00 per month"}]
