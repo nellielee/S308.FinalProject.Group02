@@ -30,9 +30,17 @@ namespace FitnessClub
         public Quote MyQuote { get; set; }
         public MembershipSales()
         {
+
             InitializeComponent();
             pricingList = getdatasetfromfile();
-            typeList = pricingList.Select(p => p.Type).ToList();
+            //string strAvailability;
+            // selectedPricing = pricingList.First(p => p.Availability == strAvailability
+            //(strAvailability == " Yes" || p.available.Exists(t => t.availability.name ==strAvailability)
+            //);
+            typeList = pricingList.Select(p => p.Type 
+            //(string strAvailability == "Yes" || p.available.Exists(t => t.availability.name == strAvailability)
+            ).ToList();
+
             //instantiate a list to hold lsit
             //set the source of the combobox and refresh
 
@@ -164,14 +172,14 @@ namespace FitnessClub
 
             switch (strType)
             {
-                case "Individual 1 Month: $9.99":
-                case "Two Person 1 Month: $14.99":
-                case "Family 1 Month: $19.99":
+                case "Individual 1 Month":
+                case "Two Person 1 Month":
+                case "Family 1 Month":
                     datEndDate = datStartDate.Value.AddMonths(1);
                     break;
-                case "Individual 12 Month: $100.00":
-                case "Two Person 12 Month: $150.00":
-                case "Family 12 Month: $200.00":
+                case "Individual 12 Month":
+                case "Two Person 12 Month":
+                case "Family 12 Month":
                     datEndDate = datStartDate.Value.AddMonths(12);
                     break;
             }
