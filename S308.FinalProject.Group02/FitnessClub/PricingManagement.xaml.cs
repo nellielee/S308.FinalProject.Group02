@@ -15,9 +15,7 @@ using PricingData;
 using System.IO;
 using Newtonsoft.Json;
 
-// done - fill combo box from json file
-// done - loop or query thru and find where type = individual 1 month to output the price and availability in boxes
-//find what's listed in dropdown, change properties (price and availability), and researizlise (write over)
+
 
 namespace FitnessClub
 {

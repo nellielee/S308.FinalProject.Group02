@@ -11,6 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PricingData;
+using System.IO;
+using Newtonsoft.Json;
+
 
 namespace FitnessClub
 {
@@ -19,14 +23,53 @@ namespace FitnessClub
     /// </summary>
     public partial class MembershipSales : Window
     {
+        List<Pricing> pricingList;
+        List<string> typeList;
+        Pricing selectedPricing;
+
         public Quote MyQuote { get; set; }
         public MembershipSales()
         {
             InitializeComponent();
+            pricingList = getdatasetfromfile();
+            typeList = pricingList.Select(p => p.Type).ToList();
+            //instantiate a list to hold lsit
+            //set the source of the combobox and refresh
+
+            cboType.ItemsSource = typeList;
+            cboType.Items.Refresh();
+
         }
+
+        public List<Pricing> getdatasetfromfile()
+        {
+            List<Pricing> pricing = new List<Pricing>();
+
+            string strfilepath = @"../../Data/Pricing.json";
+            try
+            {
+                // //use System.IO.File to read the entire data file
+                string jsondata = File.ReadAllText(strfilepath);
+                //serialize the json data to a list of customers
+                pricing = JsonConvert.DeserializeObject<List<Pricing>>(jsondata);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in pricing list" + ex.Message);
+            }
+            return pricing;
+        }
+
+     
+      
 
         private void btnSubmitQuote_Click(object sender, RoutedEventArgs e)
         {
+            if (cboType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Please select a membership type.");
+                return;
+            }
             //define variables to hold information from user input
             string strType, strPersonalTraining, strLockerRental;
             double dblPersonalTraining, dblLocker, dblMembership, dblNumberOfMonths, dblTotal, dblSubtotal, dblCostPerMonth, dblAdditionalFeatures;
