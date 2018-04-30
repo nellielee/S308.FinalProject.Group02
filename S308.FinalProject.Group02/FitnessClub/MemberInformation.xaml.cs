@@ -52,22 +52,62 @@ namespace FitnessClub
             this.Close();
         }
 
+
+        //          Validation and Search
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
             //define variables
             string strLast, strEmail, strPhone;
-            strLast = txtLastName.Text;
-            strEmail = txtEmail.Text;
-            strPhone = txtPhone.Text;
+            long lngPhone;
+            strLast = txtLastName.Text.Trim();
+
+            //Validation: Email format
+            if(txtEmail.Text.Trim() == "")
+            {
+                strEmail = txtEmail.Text;
+            }
+            else if(!txtEmail.Text.Contains("@") || !txtEmail.Text.Contains("."))
+            {
+                    MessageBox.Show("Please enter a valid email.");
+                    return;
+            }
+            else
+            {
+                strEmail = txtEmail.Text;
+            }
+
+            //Validation: If not null, phone number input must be a number
+            if (txtPhone.Text.Trim() == "")
+            {
+                strPhone = txtPhone.Text;
+            }
+            else
+            {
+                if (!long.TryParse(txtPhone.Text.Trim(), out lngPhone))
+                {
+                    MessageBox.Show("Please enter a valid 10 digit phone number without formatting. Example: 8349849820");
+                    return;
+                }
+                else if (lngPhone < 1000000000 || lngPhone > 9999999999)
+                {
+                    MessageBox.Show("Please enter a phone number that is a valid 10 digits in length. Example: 8349849820");
+                    return;
+                }
+                else
+                {
+                    strPhone = Convert.ToString(lngPhone);
+                }
+            }
 
             //Validation: All three inputs are blank
-            if(string.IsNullOrEmpty(strLast) && string.IsNullOrEmpty(strEmail) && string.IsNullOrEmpty(strPhone))
+            if (string.IsNullOrEmpty(strLast) && string.IsNullOrEmpty(strEmail) && string.IsNullOrEmpty(strPhone))
             {
                 MessageBox.Show("Must have something entered into at least one of the fields of either Last Name, Email, or Phone Number in order to search. Please enter something into at least one of the fields.");
                 return;
             }
 
-            
+
+            //Search Query
         }
     }
 }
