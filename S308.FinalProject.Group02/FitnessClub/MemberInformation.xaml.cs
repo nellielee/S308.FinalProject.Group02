@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace FitnessClub
 {
@@ -108,6 +110,32 @@ namespace FitnessClub
 
 
             //Search Query
+            List<Member> memberList;
+
+
+
+
+
+
+            //             output results, setup like from membership signup, all but calculations should be from Member.json
+            //txtResults.Text = "Membership Type: " + strMembershipType + Environment.NewLine;
+            //txtResults.Text += "Start Date: " + strStartDate + Environment.NewLine;
+            //txtResults.Text += "End Date: " + strEndDate + Environment.NewLine;
+            //??? cost per month, might need to calculate from membership sales window
+            //??? subtotal, might need to calculate from membership sales window
+            //??? additional features, I think cost from additional features but might need to calculate from membership sales window
+            //??? total, might need to calculate from membership sales window
+            //txtResults.Text += "First Name: " + strFirstName + Environment.NewLine;
+            //txtResults.Text += "Last Name: " + strLastName + Environment.NewLine;
+            //txtResults.Text += "Personal Training: " + strPersonalTraining + Environment.NewLine;
+            //txtResults.Text += "Locker Rental: " + strLockerRental + Environment.NewLine;
+            //txtResults.Text += "Phone: " + strPhone + Environment.NewLine;
+            //txtResults.Text += "Email: " + strEmail + Environment.NewLine;
+            //txtResults.Text += "Gender: " + strGender + Environment.NewLine;
+            //txtResults.Text += "Age: " + strAge + Environment.NewLine;
+            //txtResults.Text += "Weight: " + strWeight + Environment.NewLine;
+            //txtResults.Text += "Personal Fitness Goal: " + strPersonalFitnessGoal + Environment.NewLine;
+            //txtResults.Text += myQuote.ToString();
         }
     }
 }

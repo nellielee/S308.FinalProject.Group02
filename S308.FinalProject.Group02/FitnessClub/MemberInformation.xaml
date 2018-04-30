@@ -22,8 +22,8 @@
         <Label x:Name="lblPhone" Content="Phone Number" HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="21" Margin="144,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="2"/>
         <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="178,281,0,0" VerticalAlignment="Top" Width="98" TabIndex="3" Click="btnSubmit_Click"/>
-        <Label x:Name="lblResults" Content="Results:" HorizontalAlignment="Left" Margin="345,161,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtResults" HorizontalAlignment="Left" Height="258" Margin="345,194,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" FontFamily="Courier New" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
+        <Label x:Name="lblResults" Content="Results:" HorizontalAlignment="Left" Margin="345,129,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtResults" HorizontalAlignment="Left" Height="297" Margin="345,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" FontFamily="Courier New" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
 
     </Grid>
 </Window>
