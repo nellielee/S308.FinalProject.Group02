@@ -15,6 +15,7 @@ using System.IO;
 using Newtonsoft.Json;
 
 
+
 namespace FitnessClub
 {
     /// <summary>
@@ -23,25 +24,24 @@ namespace FitnessClub
     public partial class MemberInformation : Window
     {
         List<Member> memberList;
-        List<string> typeList;
         
         public MemberInformation()
         {
             InitializeComponent();
-            memberList = getdatasetfromfile();
-            typeList = memberList.Select(p => p.Type).ToList();
-            //instantiate a list to hold lsit
-            //set the source of the combobox and refresh
+            getdatasetfromfile(); 
+            //typeList = memberList.Select(p => p.Type).ToList();
+            ////instantiate a list to hold lsit
+            ////set the source of the combobox and refresh
 
-            txtLastName.DataContext = typeList;
+            //txtLastName.DataContext = typeList;
 
-            txtEmail.DataContext = typeList;
+            //txtEmail.DataContext = typeList;
 
-            txtPhone.DataContext = typeList;
+            //txtPhone.DataContext = typeList;
         }
-        public List<Member> getdatasetfromfile()
+        private void getdatasetfromfile()
         {
-            List<Member> member = new List<Member>();
+            List<Member> lsbMembersFound = new List<Member>();
 
             string strfilepath = @"../../Data/Member.json";
             try
@@ -49,13 +49,13 @@ namespace FitnessClub
                 // //use System.IO.File to read the entire data file
                 string jsondata = File.ReadAllText(strfilepath);
                 //serialize the json data to a list of customers
-                member = JsonConvert.DeserializeObject<List<Member>>(jsondata);
+                memberList = JsonConvert.DeserializeObject<List<Member>>(jsondata);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error in member list" + ex.Message);
             }
-            return member;
+            
         }
 
 
@@ -64,13 +64,14 @@ namespace FitnessClub
         //          Validation and Search
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
-            
 
             //define variables
             string strLast, strEmail, strPhone;
             long lngPhone;
             strLast = txtLastName.Text.Trim();
 
+
+            //                               Validation
             //Validation: Email format
             if (txtEmail.Text.Trim() == "")
             {
@@ -115,16 +116,57 @@ namespace FitnessClub
                 MessageBox.Show("Must have something entered into at least one of the fields of either Last Name, Email, or Phone Number in order to search. Please enter something into at least one of the fields.");
                 return;
             }
+            //                   End of Validation
+
+
+
+
 
             txtMemberInfo.Text = "";
             lsbMembersFound.Items.Clear();
 
+
+
             List<Member> membersFound = memberList.Where(m =>
-            m.LastName.StartsWith(strLast) || m.Email == strEmail || m.Phone == strPhone).ToList();
+            m.LastName.StartsWith(strLast) && m.Email.StartsWith(strEmail) && m.Phone.StartsWith(strPhone)).ToList();
+
+
 
             foreach(Member m in membersFound)
             {
-                lsbMembersFound.Items.Add(m.FirstName);
+                if(strLast == "")
+                {
+
+                }
+                else
+                {
+                    if(!lsbMembersFound.Items.Contains(m.FirstName))
+                    {
+                        lsbMembersFound.Items.Add(m.FirstName);
+                    }
+                }
+                if (strEmail == "")
+                {
+
+                }
+                else
+                {
+                    if (!lsbMembersFound.Items.Contains(m.FirstName))
+                    {
+                        lsbMembersFound.Items.Add(m.FirstName);
+                    }
+                }
+                if (strPhone == "")
+                {
+
+                }
+                else
+                {
+                    if (!lsbMembersFound.Items.Contains(m.FirstName))
+                    {
+                        lsbMembersFound.Items.Add(m.FirstName);
+                    }
+                }
             }
 
             //List<Member> membersFound = memberList.Where(m => 
@@ -132,16 +174,7 @@ namespace FitnessClub
 
         }
 
-        private void lsbMembersFound_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (lsbMembersFound.SelectedIndex > -1)
-            {
-                string strSelectedName = lsbMembersFound.SelectedItem.ToString();
 
-                Member memberSelected = memberList.Where(m => m.LastName == strSelectedName).FirstOrDefault();
-                txtMemberInfo.Text = memberSelected.ToString();
-            }
-        }
 
         //          navigation
         //Main Menu
@@ -169,6 +202,17 @@ namespace FitnessClub
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void lsbMembersFound_SelectionChanged_1(object sender, SelectionChangedEventArgs e)
+        {
+            if (lsbMembersFound.SelectedIndex > -1)
+            {
+                string strSelectedName = lsbMembersFound.SelectedItem.ToString();
+
+                Member memberSelected = memberList.Where(m => m.FirstName == strSelectedName).FirstOrDefault();
+                txtMemberInfo.Text = memberSelected.ToString();
+            }
         }
     }
 }

@@ -22,8 +22,8 @@
         <Label x:Name="lblPhone" Content="Phone Number" HorizontalAlignment="Left" Margin="33,241,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtPhone" HorizontalAlignment="Left" Height="21" Margin="144,246,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="132" TabIndex="2"/>
         <Button x:Name="btnSearch" Content="Search" HorizontalAlignment="Left" Margin="178,281,0,0" VerticalAlignment="Top" Width="98" TabIndex="3" Click="btnSubmit_Click"/>
-        <Label x:Name="lblMembersFound" Content="Members Found Last Name" HorizontalAlignment="Left" Margin="33,300,0,0" VerticalAlignment="Top" Height="25" Width="158"/>
-        <ListBox x:Name="lsbMembersFound" HorizontalAlignment="Left" Height="122" Margin="33,330,0,0" VerticalAlignment="Top" Width="267"/>
+        <Label x:Name="lblMembersFound" Content="Members Found First Name" HorizontalAlignment="Left" Margin="33,301,0,0" VerticalAlignment="Top" Height="25" Width="158"/>
+        <ListBox x:Name="lsbMembersFound" HorizontalAlignment="Left" Height="122" Margin="33,330,0,0" VerticalAlignment="Top" Width="267" SelectionChanged="lsbMembersFound_SelectionChanged_1"/>
         <Label x:Name="lblMemberInfo" Content="Member Information" HorizontalAlignment="Left" Margin="345,129,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="txtMemberInfo" HorizontalAlignment="Left" Height="297" Margin="345,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" FontFamily="Courier New" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" IsReadOnly="True"/>
 

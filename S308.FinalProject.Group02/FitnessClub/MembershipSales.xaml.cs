@@ -24,49 +24,51 @@ namespace FitnessClub
     public partial class MembershipSales : Window
     {
         List<Pricing> pricingList;
-        List<string> typeList;
-        Pricing selectedPricing;
+        //List<string> typeList;
+        //Pricing selectedPricing;
 
         public Quote MyQuote { get; set; }
         public MembershipSales()
         {
 
             InitializeComponent();
-            pricingList = getdatasetfromfile();
-            //string strAvailability;
-            // selectedPricing = pricingList.First(p => p.Availability == strAvailability
-            //(strAvailability == " Yes" || p.available.Exists(t => t.availability.name ==strAvailability)
-            //);
-            typeList = pricingList.Select(p => p.Type 
-            //(string strAvailability == "Yes" || p.available.Exists(t => t.availability.name == strAvailability)
-            ).ToList();
+            //pricingList = getdatasetfromfile();
+            ////string strAvailability;
+            //// selectedPricing = pricingList.First(p => p.Availability == strAvailability
+            ////(strAvailability == " Yes" || p.available.Exists(t => t.availability.name ==strAvailability)
+            ////);
+            //typeList = pricingList.Select(p => p.Type 
+            ////(string strAvailability == "Yes" || p.available.Exists(t => t.availability.name == strAvailability)
+            //).ToList();
 
-            //instantiate a list to hold lsit
-            //set the source of the combobox and refresh
+            ////instantiate a list to hold lsit
+            ////set the source of the combobox and refresh
 
-            cboType.ItemsSource = typeList;
-            cboType.Items.Refresh();
+            //cboType.ItemsSource = typeList;
+            //cboType.Items.Refresh();
 
         }
 
-        public List<Pricing> getdatasetfromfile()
-        {
-            List<Pricing> pricing = new List<Pricing>();
+        //public List<Pricing> getdatasetfromfile()
+        //{
+        //    List<Pricing> pricing = new List<Pricing>();
 
-            string strfilepath = @"../../Data/Pricing.json";
-            try
-            {
-                // //use System.IO.File to read the entire data file
-                string jsondata = File.ReadAllText(strfilepath);
-                //serialize the json data to a list of customers
-                pricing = JsonConvert.DeserializeObject<List<Pricing>>(jsondata);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error in pricing list" + ex.Message);
-            }
-            return pricing;
-        }
+        //    string strfilepath = @"../../Data/Pricing.json";
+        //    try
+        //    {
+        //        // //use System.IO.File to read the entire data file
+        //        string jsondata = File.ReadAllText(strfilepath);
+        //        //serialize the json data to a list of customers
+        //        pricing = JsonConvert.DeserializeObject<List<Pricing>>(jsondata);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("Error in pricing list" + ex.Message);
+        //    }
+        //    return pricing;
+        //}
+
+            //foreach loop
 
      
       
@@ -218,9 +220,6 @@ namespace FitnessClub
             //this.Close();
            
         }
-
-
-
 
 
 
