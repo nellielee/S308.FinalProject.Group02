@@ -21,9 +21,40 @@ namespace FitnessClub
     /// </summary>
     public partial class MemberInformation : Window
     {
+        List<Member> memberList;
+        List<string> typeList;
+        Member selectedMember;
         public MemberInformation()
         {
             InitializeComponent();
+            memberList = getdatasetfromfile();
+            typeList = memberList.Select(p => p.Type).ToList();
+            //instantiate a list to hold lsit
+            //set the source of the combobox and refresh
+
+            txtLastName.DataContext = typeList;
+
+            txtEmail.DataContext = typeList;
+
+            txtPhone.DataContext = typeList;
+        }
+        public List<Member> getdatasetfromfile()
+        {
+            List<Member> member = new List<Member>();
+
+            string strfilepath = @"../../Data/Member.json";
+            try
+            {
+                // //use System.IO.File to read the entire data file
+                string jsondata = File.ReadAllText(strfilepath);
+                //serialize the json data to a list of customers
+                member = JsonConvert.DeserializeObject<List<Member>>(jsondata);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in member list" + ex.Message);
+            }
+            return member;
         }
 
         //          navigation
@@ -108,34 +139,52 @@ namespace FitnessClub
                 return;
             }
 
+            //         search
 
-            //Search Query
-            List<Member> memberList;
+            selectedMember = memberList.First(p => p.LastName == strLast);
+            selectedMember = memberList.First(p => p.Email == strEmail);
+            selectedMember = memberList.First(p => p.Phone == strPhone);
+
+            txtResults.Text = selectedMember.Type;
+            txtResults.Text = selectedMember.StartDate;
+            txtResults.Text = selectedMember.EndDate;
+            txtResults.Text = selectedMember.FirstName;
+            txtResults.Text = selectedMember.LastName;
+            txtResults.Text = selectedMember.PersonalTraining;
+            txtResults.Text = selectedMember.LockerRental;
+            txtResults.Text = selectedMember.Phone;
+            txtResults.Text = selectedMember.Email;
+            txtResults.Text = selectedMember.Gender;
+            txtResults.Text = selectedMember.Age;
+            txtResults.Text = selectedMember.Weight;
+            txtResults.Text = selectedMember.PersonalFitnessGoal;
 
 
 
+            //strOutput = "Type: " + type + Environment.NewLine;
+            //strOutput += "Start Date: " + quote.StartDate + Environment.NewLine;
+            //strOutput += "End Date: " + quote.EndDate + Environment.NewLine;
+            //strOutput += "First Name: " +  firstName + Environment.NewLine;
+            //strOutput += "Last Name: " + lastName + Environment.NewLine;
+            //strOutput += "Personal Training: " + quote.PersonalTraining + Environment.NewLine;
+            //strOutput += "Locker Rental: " + quote.LockerRental + Environment.NewLine;
+            //strOutput += "Phone: " + phone + Environment.NewLine;
+            //strOutput += "Email: " + email + Environment.NewLine;
+            //strOutput += "Gender: " + gender + Environment.NewLine;
+            //strOutput += "Age: " + age + Environment.NewLine;
+            //strOutput += "Weight: " + weight + Environment.NewLine;
+            //strOutput += "Personal Fitness Goal: " + personalFitnessGoal + Environment.NewLine;
+            
+            
 
-
-
-            //             output results, setup like from membership signup, all but calculations should be from Member.json
-            //txtResults.Text = "Membership Type: " + strMembershipType + Environment.NewLine;
-            //txtResults.Text += "Start Date: " + strStartDate + Environment.NewLine;
-            //txtResults.Text += "End Date: " + strEndDate + Environment.NewLine;
-            //??? cost per month, might need to calculate from membership sales window
-            //??? subtotal, might need to calculate from membership sales window
-            //??? additional features, I think cost from additional features but might need to calculate from membership sales window
-            //??? total, might need to calculate from membership sales window
-            //txtResults.Text += "First Name: " + strFirstName + Environment.NewLine;
-            //txtResults.Text += "Last Name: " + strLastName + Environment.NewLine;
-            //txtResults.Text += "Personal Training: " + strPersonalTraining + Environment.NewLine;
-            //txtResults.Text += "Locker Rental: " + strLockerRental + Environment.NewLine;
-            //txtResults.Text += "Phone: " + strPhone + Environment.NewLine;
-            //txtResults.Text += "Email: " + strEmail + Environment.NewLine;
-            //txtResults.Text += "Gender: " + strGender + Environment.NewLine;
-            //txtResults.Text += "Age: " + strAge + Environment.NewLine;
-            //txtResults.Text += "Weight: " + strWeight + Environment.NewLine;
-            //txtResults.Text += "Personal Fitness Goal: " + strPersonalFitnessGoal + Environment.NewLine;
-            //txtResults.Text += myQuote.ToString();
-        }
+        //             output results, setup like from membership signup, all but calculations should be from Member.json
+        //txtResults.Text += "End Date: " + strEndDate + Environment.NewLine;
+        //??? cost per month, might need to calculate from membership sales window
+        //??? subtotal, might need to calculate from membership sales window
+        //??? additional features, I think cost from additional features but might need to calculate from membership sales window
+        //??? total, might need to calculate from membership sales window
+        //txtResults.Text += "First Name: " + strFirstName + Environment.NewLine;
+        
+    }
     }
 }
