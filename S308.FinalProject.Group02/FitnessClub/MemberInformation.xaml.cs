@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.IO;
 using Newtonsoft.Json;
 
+
 namespace FitnessClub
 {
     /// <summary>
@@ -57,33 +58,7 @@ namespace FitnessClub
             return member;
         }
 
-        //          navigation
-        //Main Menu
-        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
-        {
-            MainMenu mainmenuWindow = new MainMenu();
-            mainmenuWindow.Show();
-            this.Close();
-        }
-        //Membership Sales
-        private void btnMembershipSales_Click(object sender, RoutedEventArgs e)
-        {
-            MembershipSales membersaleWindow = new MembershipSales();
-            membersaleWindow.Show();
-            this.Close();
-        }
-        //Pricing Management
-        private void btnPricingManagement_Click(object sender, RoutedEventArgs e)
-        {
-            PricingManagement pricingmgmtWindow = new PricingManagement();
-            pricingmgmtWindow.Show();
-            this.Close();
-        }
-        //Exit button
-        private void btnExit_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
+
 
 
         //          Validation and Search
@@ -95,14 +70,14 @@ namespace FitnessClub
             strLast = txtLastName.Text.Trim();
 
             //Validation: Email format
-            if(txtEmail.Text.Trim() == "")
+            if (txtEmail.Text.Trim() == "")
             {
                 strEmail = txtEmail.Text;
             }
-            else if(!txtEmail.Text.Contains("@") || !txtEmail.Text.Contains("."))
+            else if (!txtEmail.Text.Contains("@") || !txtEmail.Text.Contains("."))
             {
-                    MessageBox.Show("Please enter a valid email.");
-                    return;
+                MessageBox.Show("Please enter a valid email.");
+                return;
             }
             else
             {
@@ -140,10 +115,30 @@ namespace FitnessClub
             }
 
             //         search
+            //List<Member> memberSearch;
 
-            selectedMember = memberList.First(p => p.LastName == strLast);
-            selectedMember = memberList.First(p => p.Email == strEmail);
-            selectedMember = memberList.First(p => p.Phone == strPhone);
+            //memberSearch = memberList.Where(p => p.LastName.StartsWith(strLast) &&
+            //p.Email.StartsWith(strEmail) &&
+            //p.Phone.StartsWith(strPhone))
+            //.ToList();
+
+            //txtResults.Text = "Type: " + type + Environment.NewLine;
+            //strOutput += "Start Date: " + quote.StartDate + Environment.NewLine;
+            //strOutput += "End Date: " + quote.EndDate + Environment.NewLine;
+            //strOutput += "First Name: " + firstName + Environment.NewLine;
+            //strOutput += "Last Name: " + lastName + Environment.NewLine;
+            //strOutput += "Personal Training: " + quote.PersonalTraining + Environment.NewLine;
+            //strOutput += "Locker Rental: " + quote.LockerRental + Environment.NewLine;
+            //strOutput += "Phone: " + phone + Environment.NewLine;
+            //strOutput += "Email: " + email + Environment.NewLine;
+            //strOutput += "Gender: " + gender + Environment.NewLine;
+            //strOutput += "Age: " + age + Environment.NewLine;
+            //strOutput += "Weight: " + weight + Environment.NewLine;
+            //strOutput += "Personal Fitness Goal: " + personalFitnessGoal + Environment.NewLine;
+
+            selectedMember = memberList.First(p => p.LastName == strLast);  //&& p => p.Email == strEmail);
+            selectedMember = memberList.First(t => t.Email == strEmail);
+            selectedMember = memberList.First(s => s.Phone == strPhone);
 
             txtResults.Text = selectedMember.Type;
             txtResults.Text = selectedMember.StartDate;
@@ -158,33 +153,54 @@ namespace FitnessClub
             txtResults.Text = selectedMember.Age;
             txtResults.Text = selectedMember.Weight;
             txtResults.Text = selectedMember.PersonalFitnessGoal;
+        }
 
 
 
-            //strOutput = "Type: " + type + Environment.NewLine;
-            //strOutput += "Start Date: " + quote.StartDate + Environment.NewLine;
-            //strOutput += "End Date: " + quote.EndDate + Environment.NewLine;
-            //strOutput += "First Name: " +  firstName + Environment.NewLine;
-            //strOutput += "Last Name: " + lastName + Environment.NewLine;
-            //strOutput += "Personal Training: " + quote.PersonalTraining + Environment.NewLine;
-            //strOutput += "Locker Rental: " + quote.LockerRental + Environment.NewLine;
-            //strOutput += "Phone: " + phone + Environment.NewLine;
-            //strOutput += "Email: " + email + Environment.NewLine;
-            //strOutput += "Gender: " + gender + Environment.NewLine;
-            //strOutput += "Age: " + age + Environment.NewLine;
-            //strOutput += "Weight: " + weight + Environment.NewLine;
-            //strOutput += "Personal Fitness Goal: " + personalFitnessGoal + Environment.NewLine;
-            
-            
-
-        //             output results, setup like from membership signup, all but calculations should be from Member.json
-        //txtResults.Text += "End Date: " + strEndDate + Environment.NewLine;
-        //??? cost per month, might need to calculate from membership sales window
-        //??? subtotal, might need to calculate from membership sales window
-        //??? additional features, I think cost from additional features but might need to calculate from membership sales window
-        //??? total, might need to calculate from membership sales window
-        //txtResults.Text += "First Name: " + strFirstName + Environment.NewLine;
-        
-    }
+        //          navigation
+        //Main Menu
+        private void btnMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            MainMenu mainmenuWindow = new MainMenu();
+            mainmenuWindow.Show();
+            this.Close();
+        }
+        //Membership Sales
+        private void btnMembershipSales_Click(object sender, RoutedEventArgs e)
+        {
+            MembershipSales membersaleWindow = new MembershipSales();
+            membersaleWindow.Show();
+            this.Close();
+        }
+        //Pricing Management
+        private void btnPricingManagement_Click(object sender, RoutedEventArgs e)
+        {
+            PricingManagement pricingmgmtWindow = new PricingManagement();
+            pricingmgmtWindow.Show();
+            this.Close();
+        }
+        //Exit button
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
+        //strOutput = "Type: " + type + Environment.NewLine;
+        //strOutput += "Start Date: " + quote.StartDate + Environment.NewLine;
+        //strOutput += "End Date: " + quote.EndDate + Environment.NewLine;
+        //strOutput += "First Name: " +  firstName + Environment.NewLine;
+        //strOutput += "Last Name: " + lastName + Environment.NewLine;
+        //strOutput += "Personal Training: " + quote.PersonalTraining + Environment.NewLine;
+        //strOutput += "Locker Rental: " + quote.LockerRental + Environment.NewLine;
+        //strOutput += "Phone: " + phone + Environment.NewLine;
+        //strOutput += "Email: " + email + Environment.NewLine;
+        //strOutput += "Gender: " + gender + Environment.NewLine;
+        //strOutput += "Age: " + age + Environment.NewLine;
+        //strOutput += "Weight: " + weight + Environment.NewLine;
+        //strOutput += "Personal Fitness Goal: " + personalFitnessGoal + Environment.NewLine;
+
+
+
+  
+
