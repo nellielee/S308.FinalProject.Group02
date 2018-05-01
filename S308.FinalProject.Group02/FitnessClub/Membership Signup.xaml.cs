@@ -208,12 +208,16 @@ namespace FitnessClub
             if (intCheckSum % 10 == 0)
             {
                 bolValid = true;
+
             }
 
 
             //6. Show the appropriate result   
 
+
+            strCardNum = ReverseString(strCardNum);
             strCreditCardNumber = strCardNum;
+
 
             // validate Credit Card Type - required - cbo
 

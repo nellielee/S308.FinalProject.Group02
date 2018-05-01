@@ -68,7 +68,11 @@ namespace FitnessClub
         //    return pricing;
         //}
 
-            //foreach loop
+        //foreach loop
+
+        //list.ForEach(i => Console.WriteLine(i));
+        //List<Pricing>.ForEach(i => i.Availability =="Yes" {
+
 
      
       
@@ -191,6 +195,13 @@ namespace FitnessClub
             dblSubtotal = dblMembership;
             dblAdditionalFeatures = dblLocker + dblPersonalTraining;
             dblTotal = dblSubtotal + dblAdditionalFeatures;
+
+            //turn doubles into string to pass over to next window
+            string strCostPerMonth = dblCostPerMonth.ToString("C2");
+            string strSubtotal = dblSubtotal.ToString("C2");
+            string strAdditionalFeaturesCost = dblAdditionalFeatures.ToString("C2");
+            string strTotal = dblTotal.ToString("C2");
+    
             
             //Date format to string
             string strStartDate = datStartDate.ToString(), strEndDate = datEndDate.ToString();
@@ -200,7 +211,7 @@ namespace FitnessClub
             //string strStartDate = "2017-04-04";
             //string strEndDate = "2019-04-04";
 
-            MyQuote = new Quote(strType, strStartDate, strEndDate, strPersonalTraining, strLockerRental);
+            MyQuote = new Quote(strType, strStartDate, strEndDate, strPersonalTraining, strLockerRental, strCostPerMonth, strSubtotal, strAdditionalFeaturesCost, strTotal);
             //output into textboxes - rectangle is just a boarder --placeholder code
             lblPqType2.Content = strType;
             lblPqStartDate2.Content = strStartDate;
