@@ -21,61 +21,56 @@ namespace FitnessClub
     /// <summary>
     /// Interaction logic for MembershipSales.xaml
     /// </summary>
+    
     public partial class MembershipSales : Window
     {
         List<Pricing> pricingList;
         //List<string> typeList;
         //Pricing selectedPricing;
 
+
         public Quote MyQuote { get; set; }
+
+
         public MembershipSales()
         {
-
             InitializeComponent();
-            //pricingList = getdatasetfromfile();
-            ////string strAvailability;
-            //// selectedPricing = pricingList.First(p => p.Availability == strAvailability
-            ////(strAvailability == " Yes" || p.available.Exists(t => t.availability.name ==strAvailability)
-            ////);
-            //typeList = pricingList.Select(p => p.Type 
-            ////(string strAvailability == "Yes" || p.available.Exists(t => t.availability.name == strAvailability)
-            //).ToList();
+            pricingList = new List<Pricing> ();
+            getdatasetfromfile();
 
-            ////instantiate a list to hold lsit
-            ////set the source of the combobox and refresh
-
-            //cboType.ItemsSource = typeList;
-            //cboType.Items.Refresh();
-
+            foreach (var thing in pricingList)
+            {
+                if (thing.Availability == "Yes")
+                {
+                    cboType.Items.Add(thing.Type);
+                }
+                
+            }
         }
 
-        //public List<Pricing> getdatasetfromfile()
-        //{
-        //    List<Pricing> pricing = new List<Pricing>();
+        public void getdatasetfromfile()
+        {
+            List<Pricing> pricing = new List<Pricing>();
 
-        //    string strfilepath = @"../../Data/Pricing.json";
-        //    try
-        //    {
-        //        // //use System.IO.File to read the entire data file
-        //        string jsondata = File.ReadAllText(strfilepath);
-        //        //serialize the json data to a list of customers
-        //        pricing = JsonConvert.DeserializeObject<List<Pricing>>(jsondata);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Error in pricing list" + ex.Message);
-        //    }
-        //    return pricing;
-        //}
-
-        //foreach loop
-
-        //list.ForEach(i => Console.WriteLine(i));
-        //List<Pricing>.ForEach(i => i.Availability =="Yes" {
-
+            string strfilepath = @"../../Data/Pricing.json";
+            try
+            {
+                // //use System.IO.File to read the entire data file
+                string jsondata = File.ReadAllText(strfilepath);
+                //serialize the json data to a list of customers
+                pricingList = JsonConvert.DeserializeObject<List<Pricing>>(jsondata);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error in pricing list" + ex.Message);
+            }
+            //return pricing;
+        }
 
      
-      
+
+
+
 
         private void btnSubmitQuote_Click(object sender, RoutedEventArgs e)
         {
@@ -89,8 +84,8 @@ namespace FitnessClub
             double dblPersonalTraining, dblLocker, dblMembership, dblNumberOfMonths, dblTotal, dblSubtotal, dblCostPerMonth, dblAdditionalFeatures;
 
             //type combo
-            ComboBoxItem cbiSelectedType = (ComboBoxItem)cboType.SelectedItem;
-            strType = cbiSelectedType.Content.ToString();
+
+            strType = cboType.Text;
 
             //start date and date picker
             DateTime? datStartDate = dtpStartDate.SelectedDate;
@@ -113,7 +108,7 @@ namespace FitnessClub
             //set number of months of membership to calcualte out additional costs
            
 
-            if(strType == "Individual 1 Month: $9.99" || strType == "Two Person 1 Month: $14.99"|| strType== "Family 1 Month: $19.99")
+            if(strType == "Individual 1 Month" || strType == "Two Person 1 Month"|| strType== "Family 1 Month")
             {
                 dblNumberOfMonths = 1;
             }
@@ -150,22 +145,22 @@ namespace FitnessClub
             //Set the price of just the membership
             switch(strType)
             {
-                case "Individual 1 Month: $9.99":
+                case "Individual 1 Month":
                     dblMembership = 9.99;
                     break;
-                case "Two Person 1 Month: $14.99":
+                case "Two Person 1 Month":
                     dblMembership = 14.99;
                     break;
-                case "Family 1 Month: $19.99":
+                case "Family 1 Month":
                     dblMembership = 19.99;
                     break;
-                case "Individual 12 Month: $100.00":
+                case "Individual 12 Month":
                     dblMembership = 100.00;
                     break;
-                case "Two Person 12 Month: $150.00":
+                case "Two Person 12 Month":
                     dblMembership = 150.00;
                     break;
-                case "Family 12 Month: $200.00":
+                case "Family 12 Month":
                     dblMembership = 200.00;
                     break;
                 default:
@@ -268,3 +263,4 @@ namespace FitnessClub
         }
     }
 }
+

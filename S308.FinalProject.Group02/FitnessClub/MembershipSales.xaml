@@ -20,9 +20,7 @@
         <Label x:Name="lblPtp" Content="Personal Training Plan" HorizontalAlignment="Left" Margin="33,254,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblLocker" Content="Locker Rental" HorizontalAlignment="Left" Margin="33,280,0,0" VerticalAlignment="Top"/>
         <Label x:Name="lblPricingQuote" Content="Pricing Quote Preview:" HorizontalAlignment="Left" Margin="375,161,0,0" VerticalAlignment="Top" FontSize="13.333"/>
-        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="192,179,0,0" VerticalAlignment="Top" Width="172" TabIndex="0" SelectedIndex="0">
-            <ComboBoxItem Content="Individual 1 Month: $9.99"/>
-        </ComboBox>
+        <ComboBox x:Name="cboType" HorizontalAlignment="Left" Margin="192,179,0,0" VerticalAlignment="Top" Width="172" TabIndex="0" SelectedIndex="0"/>
         <ComboBox x:Name="cboPtp" HorizontalAlignment="Left" Margin="192,254,0,0" VerticalAlignment="Top" Width="172" TabIndex="2" SelectedIndex="0">
             <ComboBoxItem Content="Do Not Include"/>
             <ComboBoxItem Content="Include: $5.00 per month"/>
