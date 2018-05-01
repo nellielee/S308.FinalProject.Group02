@@ -58,9 +58,7 @@ namespace FitnessClub
             }
         }
 
-
-
-
+        
         //messagebox confirmation
         private void btnReturn_Click(object sender, RoutedEventArgs e)
         {
@@ -72,12 +70,6 @@ namespace FitnessClub
         private void btnCreateMember_Click(object sender, RoutedEventArgs e)
         {
             string strFilePath = @"..\..\..\FitnessClub\Data\Member.json";
-
-
-            // do we need this here?
-            //MainMenu mainmenuWindow = new MainMenu();
-            //mainmenuWindow.Show();
-            //this.Close();
 
             //create variables
             string strFirstName, strLastName, strCreditCardType, strCreditCardNumber, strPhone, strEmail, strGender, strPersonalFitnessGoal, strAge, strWeight;
@@ -131,11 +123,7 @@ namespace FitnessClub
                 return;
             }
 
-
-
-
-
-
+            
 
             //validate Credit Card Number - required
             //1. Declare a variables

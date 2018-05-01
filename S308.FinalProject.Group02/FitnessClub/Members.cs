@@ -45,7 +45,6 @@ namespace FitnessClub
         }
 
         //overrride
-
         
             public override string ToString()
 

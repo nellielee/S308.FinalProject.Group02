@@ -25,9 +25,7 @@ namespace FitnessClub
     public partial class MembershipSales : Window
     {
         List<Pricing> pricingList;
-        //List<string> typeList;
-        //Pricing selectedPricing;
-
+       
 
         public Quote MyQuote { get; set; }
 
@@ -69,9 +67,6 @@ namespace FitnessClub
 
      
 
-
-
-
         private void btnSubmitQuote_Click(object sender, RoutedEventArgs e)
         {
             if (cboType.SelectedIndex == -1)
@@ -95,7 +90,14 @@ namespace FitnessClub
                 MessageBox.Show("Please select a Start Date using the date picker.");
                 return;
             }
-
+            //validate start date is not in the past
+            
+            if (datStartDate < (DateTime.Today))
+            {
+                MessageBox.Show("Please select a start date not in the past.");
+                return;
+            }
+           
             //Personal Training Combo
             ComboBoxItem cbiSelectedTraining = (ComboBoxItem)cboPtp.SelectedItem;
             strPersonalTraining = cbiSelectedTraining.Content.ToString();
@@ -200,11 +202,7 @@ namespace FitnessClub
             
             //Date format to string
             string strStartDate = datStartDate.ToString(), strEndDate = datEndDate.ToString();
-            //    String format of date includes hours
-            //    might be because set as DateTime? not DateTime, but date wouldn't work as DateTIme
-            //    was using Demo 16 for help
-            //string strStartDate = "2017-04-04";
-            //string strEndDate = "2019-04-04";
+          
 
             MyQuote = new Quote(strType, strStartDate, strEndDate, strPersonalTraining, strLockerRental, strCostPerMonth, strSubtotal, strAdditionalFeaturesCost, strTotal);
             //output into textboxes - rectangle is just a boarder --placeholder code
@@ -223,16 +221,12 @@ namespace FitnessClub
 
         private void btnExit_Click(object sender, RoutedEventArgs e)
         {
-            //this.Close();
+            this.Close();
            
         }
-
-
-
-
+        
         //navigation bar 
-
-
+        
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
             MainMenu mainmenuWindow = new MainMenu();

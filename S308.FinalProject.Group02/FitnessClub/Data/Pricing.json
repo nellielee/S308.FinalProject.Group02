@@ -1,7 +1,7 @@
 ﻿[
   {
     "Type": "Individual 1 Month",
-    "Price": "$10.00",
+    "Price": "$9.99",
     "Availability": "Yes"
   },
   {
@@ -30,3 +30,4 @@
     "Availability": "Yes"
   }
 ]
+

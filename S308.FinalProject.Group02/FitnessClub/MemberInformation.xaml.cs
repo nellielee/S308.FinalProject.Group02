@@ -29,15 +29,7 @@ namespace FitnessClub
         {
             InitializeComponent();
             getdatasetfromfile(); 
-            //typeList = memberList.Select(p => p.Type).ToList();
-            ////instantiate a list to hold lsit
-            ////set the source of the combobox and refresh
-
-            //txtLastName.DataContext = typeList;
-
-            //txtEmail.DataContext = typeList;
-
-            //txtPhone.DataContext = typeList;
+           
         }
         private void getdatasetfromfile()
         {
@@ -57,9 +49,7 @@ namespace FitnessClub
             }
             
         }
-
-
-
+        
 
         //          Validation and Search
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
@@ -71,7 +61,7 @@ namespace FitnessClub
             strLast = txtLastName.Text.Trim();
 
 
-            //                               Validation
+            //Validation
             //Validation: Email format
             if (txtEmail.Text.Trim() == "")
             {
@@ -116,22 +106,14 @@ namespace FitnessClub
                 MessageBox.Show("Must have something entered into at least one of the fields of either Last Name, Email, or Phone Number in order to search. Please enter something into at least one of the fields.");
                 return;
             }
-            //                   End of Validation
-
-
-
-
+            // End of Validation
 
             txtMemberInfo.Text = "";
             lsbMembersFound.Items.Clear();
-
-
-
+            
             List<Member> membersFound = memberList.Where(m =>
             m.LastName.StartsWith(strLast) && m.Email.StartsWith(strEmail) && m.Phone.StartsWith(strPhone)).ToList();
-
-
-
+            
             foreach(Member m in membersFound)
             {
                 if(strLast == "")
@@ -169,14 +151,10 @@ namespace FitnessClub
                 }
             }
 
-            //List<Member> membersFound = memberList.Where(m => 
-            //m.LastName.StartsWith(strLast) && m.Email == strEmail && m.Phone == strPhone).ToList();
 
         }
-
-
-
-        //          navigation
+        
+        //navigation
         //Main Menu
         private void btnMainMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -216,19 +194,7 @@ namespace FitnessClub
         }
     }
 }
-        //strOutput = "Type: " + type + Environment.NewLine;
-        //strOutput += "Start Date: " + quote.StartDate + Environment.NewLine;
-        //strOutput += "End Date: " + quote.EndDate + Environment.NewLine;
-        //strOutput += "First Name: " +  firstName + Environment.NewLine;
-        //strOutput += "Last Name: " + lastName + Environment.NewLine;
-        //strOutput += "Personal Training: " + quote.PersonalTraining + Environment.NewLine;
-        //strOutput += "Locker Rental: " + quote.LockerRental + Environment.NewLine;
-        //strOutput += "Phone: " + phone + Environment.NewLine;
-        //strOutput += "Email: " + email + Environment.NewLine;
-        //strOutput += "Gender: " + gender + Environment.NewLine;
-        //strOutput += "Age: " + age + Environment.NewLine;
-        //strOutput += "Weight: " + weight + Environment.NewLine;
-        //strOutput += "Personal Fitness Goal: " + personalFitnessGoal + Environment.NewLine;
+       
 
 
 
