@@ -24,7 +24,7 @@ namespace FitnessClub
     {
         List<Member> memberList;
         List<string> typeList;
-        Member selectedMember;
+        
         public MemberInformation()
         {
             InitializeComponent();
@@ -64,6 +64,8 @@ namespace FitnessClub
         //          Validation and Search
         private void btnSubmit_Click(object sender, RoutedEventArgs e)
         {
+            
+
             //define variables
             string strLast, strEmail, strPhone;
             long lngPhone;
@@ -114,48 +116,32 @@ namespace FitnessClub
                 return;
             }
 
-            //         search
-            //List<Member> memberSearch;
+            txtMemberInfo.Text = "";
+            lsbMembersFound.Items.Clear();
 
-            //memberSearch = memberList.Where(p => p.LastName.StartsWith(strLast) &&
-            //p.Email.StartsWith(strEmail) &&
-            //p.Phone.StartsWith(strPhone))
-            //.ToList();
+            List<Member> membersFound = memberList.Where(m =>
+            m.LastName.StartsWith(strLast) || m.Email == strEmail || m.Phone == strPhone).ToList();
 
-            //txtResults.Text = "Type: " + type + Environment.NewLine;
-            //strOutput += "Start Date: " + quote.StartDate + Environment.NewLine;
-            //strOutput += "End Date: " + quote.EndDate + Environment.NewLine;
-            //strOutput += "First Name: " + firstName + Environment.NewLine;
-            //strOutput += "Last Name: " + lastName + Environment.NewLine;
-            //strOutput += "Personal Training: " + quote.PersonalTraining + Environment.NewLine;
-            //strOutput += "Locker Rental: " + quote.LockerRental + Environment.NewLine;
-            //strOutput += "Phone: " + phone + Environment.NewLine;
-            //strOutput += "Email: " + email + Environment.NewLine;
-            //strOutput += "Gender: " + gender + Environment.NewLine;
-            //strOutput += "Age: " + age + Environment.NewLine;
-            //strOutput += "Weight: " + weight + Environment.NewLine;
-            //strOutput += "Personal Fitness Goal: " + personalFitnessGoal + Environment.NewLine;
+            foreach(Member m in membersFound)
+            {
+                lsbMembersFound.Items.Add(m.FirstName);
+            }
 
-            selectedMember = memberList.First(p => p.LastName == strLast);  //&& p => p.Email == strEmail);
-            selectedMember = memberList.First(t => t.Email == strEmail);
-            selectedMember = memberList.First(s => s.Phone == strPhone);
+            //List<Member> membersFound = memberList.Where(m => 
+            //m.LastName.StartsWith(strLast) && m.Email == strEmail && m.Phone == strPhone).ToList();
 
-            txtResults.Text = selectedMember.Type;
-            txtResults.Text = selectedMember.StartDate;
-            txtResults.Text = selectedMember.EndDate;
-            txtResults.Text = selectedMember.FirstName;
-            txtResults.Text = selectedMember.LastName;
-            txtResults.Text = selectedMember.PersonalTraining;
-            txtResults.Text = selectedMember.LockerRental;
-            txtResults.Text = selectedMember.Phone;
-            txtResults.Text = selectedMember.Email;
-            txtResults.Text = selectedMember.Gender;
-            txtResults.Text = selectedMember.Age;
-            txtResults.Text = selectedMember.Weight;
-            txtResults.Text = selectedMember.PersonalFitnessGoal;
         }
 
+        private void lsbMembersFound_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lsbMembersFound.SelectedIndex > -1)
+            {
+                string strSelectedName = lsbMembersFound.SelectedItem.ToString();
 
+                Member memberSelected = memberList.Where(m => m.LastName == strSelectedName).FirstOrDefault();
+                txtMemberInfo.Text = memberSelected.ToString();
+            }
+        }
 
         //          navigation
         //Main Menu
